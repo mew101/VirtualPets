@@ -15,7 +15,6 @@ namespace VirtualPetsAmok
             {
                 Console.WriteLine("Good-bye. Come again soon.");
                 Environment.Exit(0);
-                
             }
 
              Console.WriteLine("Patience Please!");
