@@ -47,7 +47,7 @@ namespace VirtualpetsAmok.Tests
         [Fact]
         public void Pet_Species()
         {
-            //Create Pet Hunger Level (will be 1 through 10)
+            //Create Pet Species
             VirtualPet pet = new VirtualPet
             {
                 Species = "kitty"
@@ -58,7 +58,7 @@ namespace VirtualpetsAmok.Tests
         [Fact]
         public void Pet_Boredom()
         {
-            //Create Pet Hunger Level (will be 1 through 10)
+            //Create Pet Boredom Level (will be 1 through 10)
             VirtualPet pet = new VirtualPet();
 
             //default boredom is 5
@@ -68,7 +68,7 @@ namespace VirtualpetsAmok.Tests
         [Fact]
         public void Pet_Fatigue()
         {
-            //Create Pet Hunger Level (will be 1 through 10)
+            //Create Pet Fatigue Level (will be 1 through 10)
             VirtualPet pet = new VirtualPet();
 
             //default fatigue is 5
@@ -84,6 +84,7 @@ namespace VirtualpetsAmok.Tests
 
             Assert.Equal(4, pet.Fatigue);
             Assert.Equal(4, pet.Boredom);
+            Assert.Equal(4, pet.Hunger);
         }
 
 

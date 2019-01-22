@@ -6,12 +6,16 @@ namespace VirtualPetsAmok
     {
         static void Main(string[] args)
         {
+            Console.BackgroundColor = ConsoleColor.DarkBlue;
+
+
             VirtualPet pet1 = new VirtualPet();    //This may need to be moved
             bool gameContinues = true;
             bool petExists = false;
 
             Console.WriteLine("Welcome to the Pet Shelter!");
 
+            Console.BackgroundColor = ConsoleColor.Black;
             do
             {
 
