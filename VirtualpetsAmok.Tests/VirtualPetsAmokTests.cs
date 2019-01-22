@@ -42,6 +42,16 @@ namespace VirtualpetsAmok.Tests
 
             Assert.Equal(4, pet.Hunger);
         }
+        [Fact]
+        public void Pet_Species()
+        {
+            //Create Pet Hunger Level (will be 1 through 10)
+            VirtualPet pet = new VirtualPet();
+
+            pet.Species = "kitty";
+
+            Assert.Equal("kitty", pet.Species);
+        }
 
 
 
