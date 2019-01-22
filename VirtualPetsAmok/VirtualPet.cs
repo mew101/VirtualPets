@@ -7,6 +7,8 @@ namespace VirtualPetsAmok
    public class VirtualPet
     {
         public string Name { get; set; }
+        public int Age { get; set; }
+        public int Hunger { get; set; }
 
     }
 }
