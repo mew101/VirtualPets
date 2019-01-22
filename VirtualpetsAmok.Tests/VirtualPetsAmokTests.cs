@@ -16,9 +16,10 @@ namespace VirtualpetsAmok.Tests
         public void Pet_Name()
         {
             //Create Pet Name
-            VirtualPet pet = new VirtualPet();
-
-            pet.Name = "Sparky";
+            VirtualPet pet = new VirtualPet
+            {
+                Name = "Sparky"
+            };
 
             Assert.Equal("Sparky", pet.Name);
         }
@@ -26,9 +27,10 @@ namespace VirtualpetsAmok.Tests
         public void Pet_Age()
         {
             //Create Pet Age
-            VirtualPet pet = new VirtualPet();
-                        
-            pet.Age = 7;
+            VirtualPet pet = new VirtualPet
+            {
+                Age = 7
+            };
 
             Assert.Equal(7, pet.Age);
         }
@@ -38,23 +40,51 @@ namespace VirtualpetsAmok.Tests
             //Create Pet Hunger Level (will be 1 through 10)
             VirtualPet pet = new VirtualPet();
             
-            pet.Hunger = 4;
+            //pet.Hunger = 4;
 
-            Assert.Equal(4, pet.Hunger);
+            Assert.Equal(5, pet.Hunger);
         }
         [Fact]
         public void Pet_Species()
         {
             //Create Pet Hunger Level (will be 1 through 10)
-            VirtualPet pet = new VirtualPet();
-
-            pet.Species = "kitty";
+            VirtualPet pet = new VirtualPet
+            {
+                Species = "kitty"
+            };
 
             Assert.Equal("kitty", pet.Species);
         }
+        [Fact]
+        public void Pet_Boredom()
+        {
+            //Create Pet Hunger Level (will be 1 through 10)
+            VirtualPet pet = new VirtualPet();
 
+            //default boredom is 5
 
+            Assert.Equal(5, pet.Boredom);
+        }
+        [Fact]
+        public void Pet_Fatigue()
+        {
+            //Create Pet Hunger Level (will be 1 through 10)
+            VirtualPet pet = new VirtualPet();
 
+            //default fatigue is 5
+
+            Assert.Equal(5, pet.Fatigue);
+        }
+        [Fact]
+        public void Pet_TimeIncrement()
+        {
+            VirtualPet pet = new VirtualPet();
+
+            pet.TimeIncrement();
+
+            Assert.Equal(4, pet.Fatigue);
+            Assert.Equal(4, pet.Boredom);
+        }
 
 
 
