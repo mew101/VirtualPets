@@ -39,8 +39,16 @@ namespace VirtualPetsAmok
             {
 
                 Console.Clear();
-                for (int t=0; t<i; t++)
-                    Console.Write("\t");
+                if (i < (tabs/2))
+                {
+                    for (int t = 0; t < i; t++)
+                        Console.Write("\n\n\n");
+                }
+                else
+                {
+                    for (int t = tabs; t > i; t--)
+                        Console.Write("\n\n\n");
+                }
                 Console.WriteLine("\n\n");
                 for (int t = 0; t < i; t++)
                     Console.Write("\t");
@@ -71,17 +79,19 @@ namespace VirtualPetsAmok
                 Console.WriteLine(@"   \   \/\      (\  )");
                 for (int t = 0; t < i; t++)
                     Console.Write("\t");
-                Console.WriteLine(@"    \   ) \     ) \ \");
+                Console.WriteLine(@"    \   ) \     ) \ \                    ____()()");
                 for (int t = 0; t < i; t++)
                     Console.Write("\t");
-                Console.WriteLine(@"     ) / __ \__  ) (\ \___");
+                Console.WriteLine(@"     ) / __ \__  ) (\ \___             /       @@");
                 for (int t = 0; t < i; t++)
                     Console.Write("\t");
-                Console.WriteLine(@"   (___)))__))(__))(__)))");
+                Console.WriteLine(@"   (___)))__))(__))(__)))        `~~~~~\_;m__m._ >o");
                 Thread.Sleep(milliSec);
             }
 
-
+         //        ____()()
+         //       /       @@
+         // `~~~~~\_;m__m._ >o
         }
 
     }
