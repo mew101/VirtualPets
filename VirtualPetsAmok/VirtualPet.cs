@@ -44,7 +44,7 @@ namespace VirtualPetsAmok
                 Console.WriteLine("\n\n");
                 for (int t = 0; t < i; t++)
                     Console.Write("\t");
-                Console.WriteLine(@"   _");
+                Console.WriteLine(@" _");
                 for (int t = 0; t < i; t++)
                     Console.Write("\t");
                 Console.WriteLine(@"( \");
