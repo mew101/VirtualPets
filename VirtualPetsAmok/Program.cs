@@ -12,6 +12,7 @@ namespace VirtualPetsAmok
             bool gameContinues = true;
             bool petExists = false;
 
+            VirtualPet.Kitty(10,100); //Kitty(tabs, milliseconds);
             Console.WriteLine("Welcome to the Pet Shelter!");
 
             Console.BackgroundColor = ConsoleColor.Black; //Change console background color back to black
@@ -24,8 +25,9 @@ namespace VirtualPetsAmok
                     "P - View Pet \n\t" +
                     "I - View Instructions");
                 Console.WriteLine("");
+                
                 string userInput = Console.ReadLine().ToLower();
-
+                Console.Clear();
                 if (userInput.Equals("e"))
                 {
                     Console.WriteLine("Good-bye. Come again soon.");

@@ -50,10 +50,12 @@ namespace VirtualpetsAmok.Tests
             //Create Pet Species
             VirtualPet pet = new VirtualPet
             {
-                Species = "kitty"
+                Species = "kitty",
+                Name = "Sam"
             };
 
             Assert.Equal("kitty", pet.Species);
+            Assert.Equal("Sam", pet.Name);
         }
         [Fact]
         public void Pet_Boredom()
