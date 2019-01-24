@@ -35,14 +35,14 @@ namespace VirtualpetsAmok.Tests
             Assert.Equal(7, pet.Age);
         }
         [Fact]
-        public void Pet_Hunger()
+        public void Pet_Fullness()
         {
-            //Create Pet Hunger Level (will be 1 through 10)
+            //Create Pet Fullness Level (will be 1 through 10)
             VirtualPet pet = new VirtualPet();
-            
-            //pet.Hunger = 4;
 
-            Assert.Equal(5, pet.Hunger);
+            //pet.Fullness = 4;
+
+            Assert.Equal(5, pet.Fullness);
         }
         [Fact]
         public void Pet_Species()
@@ -58,38 +58,76 @@ namespace VirtualpetsAmok.Tests
             Assert.Equal("Sam", pet.Name);
         }
         [Fact]
-        public void Pet_Boredom()
+        public void Pet_Happiness()
         {
-            //Create Pet Boredom Level (will be 1 through 10)
+            //Create Pet Happiness Level (will be 1 through 10)
             VirtualPet pet = new VirtualPet();
 
-            //default boredom is 5
+            //default Happiness is 5
 
-            Assert.Equal(5, pet.Boredom);
+            Assert.Equal(5, pet.Happiness);
         }
         [Fact]
-        public void Pet_Fatigue()
+        public void Pet_Energy()
         {
-            //Create Pet Fatigue Level (will be 1 through 10)
+            //Create Pet Energy Level (will be 1 through 10)
             VirtualPet pet = new VirtualPet();
 
-            //default fatigue is 5
+            //default Energy is 5
 
-            Assert.Equal(5, pet.Fatigue);
+            Assert.Equal(5, pet.Energy);
         }
         [Fact]
-        public void Pet_TimeIncrement()
+        public void Pet_Time_Increment()
         {
             VirtualPet pet = new VirtualPet();
 
             pet.TimeIncrement();
 
-            Assert.Equal(4, pet.Fatigue);
-            Assert.Equal(4, pet.Boredom);
-            Assert.Equal(4, pet.Hunger);
+            Assert.Equal(4, pet.Energy);
+            Assert.Equal(4, pet.Happiness);
+            Assert.Equal(4, pet.Fullness);
         }
+        [Fact]
+        public void Pet_Feed_A_Pet()
+        {
+            VirtualPet pet = new VirtualPet
+            {
+                Fullness = 5
+            };
 
+            //Feeding a pet adds 3 to Fullness
+            pet.Feed();
 
+            Assert.Equal(8, pet.Fullness);
+        }
+        [Fact]
+        public void Pet_Play_With_Pet()
+        {
+            VirtualPet pet = new VirtualPet
+            {
+                Happiness = 5
+            };
+
+            //Playing with a pet adds 3 to Happiness
+            pet.Play();
+
+            Assert.Equal(8, pet.Happiness);
+        }
+        [Fact]
+            
+            public void Pet_Nap_A_Pet()
+        {
+            VirtualPet pet = new VirtualPet
+            {
+                Energy = 5
+            };
+
+            //napping a pet adds 3 to Energy
+            pet.Nap();
+
+            Assert.Equal(8, pet.Energy);
+        }
 
     }
 }

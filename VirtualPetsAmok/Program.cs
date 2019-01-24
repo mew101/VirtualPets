@@ -7,7 +7,8 @@ namespace VirtualPetsAmok
         static void Main(string[] args)
         {
             Console.BackgroundColor = ConsoleColor.DarkBlue; //Change Console background color 
-            
+
+            //VirtualPet[] pet1 = new VirtualPet[2];
             VirtualPet pet1 = new VirtualPet();    //This may need to be moved
             bool gameContinues = true;
             bool petExists = false;
@@ -41,9 +42,9 @@ namespace VirtualPetsAmok
                         Console.WriteLine("\n\tYour pet is a " + pet1.Species + ".");
                         Console.WriteLine("\n\tYour pet's name is: " + pet1.Name);
                         Console.WriteLine("\n\tYour pet's age is: " + pet1.Age);
-                        Console.WriteLine("\n\tYour pet's hunger level is: " + pet1.Hunger);
-                        Console.WriteLine("\n\tYour pet's boredom level is: " + pet1.Boredom);
-                        Console.WriteLine("\n\tYour pet's fatigue level is: " + pet1.Fatigue);
+                        Console.WriteLine("\n\tYour pet's fullness level is: " + pet1.Fullness);
+                        Console.WriteLine("\n\tYour pet's happiness level is: " + pet1.Happiness);
+                        Console.WriteLine("\n\tYour pet's energy level is: " + pet1.Energy);
                     }
                     else
                     {
@@ -64,11 +65,11 @@ namespace VirtualPetsAmok
                             //Console.WriteLine("\n\tEnter the pet's age:");
                             pet1.Age = System.Convert.ToInt32(Console.ReadLine());
                             Console.WriteLine("\n\tYour pet's age is: " + pet1.Age);
-                            Console.WriteLine("\n\tYour pet's hunger level is: " + pet1.Hunger);
-                            Console.WriteLine("\n\tYour pet's boredom level is: " + pet1.Boredom);
-                            Console.WriteLine("\n\tYour pet's fatigue level is: " + pet1.Fatigue);
+                            Console.WriteLine("\n\tYour pet's fullness level is: " + pet1.Fullness);
+                            Console.WriteLine("\n\tYour pet's happiness level is: " + pet1.Happiness);
+                            Console.WriteLine("\n\tYour pet's energy level is: " + pet1.Energy);
                             //Console.WriteLine("How hungry is " + pet1.Name + " on a scale of 1 to 10 ? (10 being super FULL)");
-                            //pet1.Hunger = System.Convert.ToInt32(Console.ReadLine());
+                            //pet1.Fullness = System.Convert.ToInt32(Console.ReadLine());
 
                             petExists = true;
 
