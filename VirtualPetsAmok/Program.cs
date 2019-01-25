@@ -46,7 +46,26 @@ namespace VirtualPetsAmok
                         while (pet1.DisplayInteractionMenu())
                         {
                             pet1.TimeIncrement();
-                            pet1.DisplayPetInfo(); 
+                            pet1.DisplayPetInfo();
+                            if (!pet1.IsAlive())
+                            {
+                                Console.Clear();
+                                Console.Beep();
+                                Console.Write(@"
+ _;~)                  (~;_
+(   |                  |   )
+ ~', ',    ,''~'',   ,' ,'~
+     ', ','       ',' ,'
+       ',: {'} {'} :,'
+         ;   /^\   ;
+          ~\  ~  /~
+        ,' ,~~~~~, ',
+      ,' ,' ;~~~; ', ',
+    ,' ,'    '''    ', ',
+  (~  ;               ;  ~)
+   -;_)               (_;-");
+                                Console.WriteLine("\n\t" + pet1.Name + " is dead");
+                            }
                         }
                         Console.Clear();
                     }

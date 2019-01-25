@@ -219,6 +219,15 @@ namespace VirtualPetsAmok
             }
             return (interacted);
         }
+        public bool IsAlive()
+        {
+            bool alive = true;
+            if ((Fullness < 1) || (Happiness < 1) || (Energy < 1))
+            {
+                alive = false;
+            }
+            return (alive);
+        }
 
     }
 }
