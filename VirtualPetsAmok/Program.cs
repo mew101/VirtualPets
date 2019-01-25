@@ -37,14 +37,40 @@ namespace VirtualPetsAmok
                 }
                 else if (userInput.Equals("p"))
                 {
+                    Console.Clear();
                     if (petExists)
                     {
+                        
                         Console.WriteLine("\n\tYour pet is a " + pet1.Species + ".");
                         Console.WriteLine("\n\tYour pet's name is: " + pet1.Name);
                         Console.WriteLine("\n\tYour pet's age is: " + pet1.Age);
                         Console.WriteLine("\n\tYour pet's fullness level is: " + pet1.Fullness);
                         Console.WriteLine("\n\tYour pet's happiness level is: " + pet1.Happiness);
                         Console.WriteLine("\n\tYour pet's energy level is: " + pet1.Energy);
+                        Console.WriteLine("_____________________________________________");
+                        Console.WriteLine("Choose an action from the menu");
+                        Console.WriteLine("F - Feed");
+                        Console.WriteLine("P - Play");
+                        Console.WriteLine("N - Nap");
+                        Console.WriteLine("E - Go Back to Main Menu");
+                        Console.Write("Entry.........: ");
+                        string entry = Console.ReadLine();
+                        switch (entry.ToLower())
+                        {
+                            case "f":
+                                pet1.Feed();
+                                break;
+                            case "p":
+                                pet1.Play();
+                                break;
+                            case "n":
+                                pet1.Nap();
+                                break;
+                            default:
+                                
+                                break;
+                        }
+
                     }
                     else
                     {

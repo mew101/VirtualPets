@@ -31,15 +31,18 @@ namespace VirtualPetsAmok
         public void Feed()
         {
             Fullness += 3;
+            Console.WriteLine("You just FED " + Name + "!");
         }
         public void Play()
         {
             Happiness += 3;
+            Console.WriteLine("You just PLAYED with" + Name + "!");
         }
 
         public void Nap()
         {
             Energy += 3;
+            Console.WriteLine(Name + " took a NAP!");
         }
         public static void Kitty(int tabs, int milliSec)
         {
