@@ -22,7 +22,7 @@ namespace VirtualPetsAmok
             do
             {
                 
-                Console.Write("Type a LETTER to continue: \n\n\t" +
+                Console.Write("\tType a LETTER to continue: \n\n\t" +
 
                     "E - Exit \n\t" +
                     "P - View Pet \n\t" +
@@ -44,8 +44,11 @@ namespace VirtualPetsAmok
 
                         pet1.DisplayPetInfo();
                         while (pet1.DisplayInteractionMenu())
-                        { pet1.DisplayPetInfo(); }
-
+                        {
+                            pet1.TimeIncrement();
+                            pet1.DisplayPetInfo(); 
+                        }
+                        Console.Clear();
                     }
                     else
                     {
@@ -56,11 +59,11 @@ namespace VirtualPetsAmok
                         {
 
 
-                            Console.Write("\n\tEnter the pet's species:");
+                            Console.Write("\n\tEnter the pet's species: ");
                             pet1.Species = Console.ReadLine();
-                            Console.Write("\n\tEnter the pet's name:");
+                            Console.Write("\n\tEnter the pet's name: ");
                             pet1.Name = Console.ReadLine();
-
+                            Console.Clear();
                             Console.Write("Congratulations! Your pet's name is " + pet1.Name +
                                 "\nWhat is " + pet1.Name + "'s age? ");
                             //Console.WriteLine("\n\tEnter the pet's age:");
@@ -81,7 +84,7 @@ namespace VirtualPetsAmok
                 if ((petExists)&&(gameContinues))
                 {
                     pet1.TimeIncrement();
-                    Console.Beep();
+                    
                 }
             } while (gameContinues);
             

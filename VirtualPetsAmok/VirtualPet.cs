@@ -13,6 +13,7 @@ namespace VirtualPetsAmok
         public int Fullness { get; set; }        
         public int Energy { get; set; }
         public int Happiness { get; set; }
+        public const int IncreaseAmount = 5;
 
         public VirtualPet()
         {
@@ -24,25 +25,30 @@ namespace VirtualPetsAmok
         }
         public void TimeIncrement()
         {
+            Console.Beep();
             Energy--;
             Happiness--;
             Fullness--;
         }
         public void Feed()
         {
-            Fullness += 3; 
-            Console.WriteLine("You just FED " + Name + " !");
+            Fullness += IncreaseAmount;
+            Console.Clear();
+            Console.WriteLine("\tYou just FED " + Name + " !");
+
         }
         public void Play()
         {
-            Happiness += 3;
-            Console.WriteLine("You just PLAYED with " + Name + " !");
+            Happiness += IncreaseAmount;
+            Console.Clear();
+            Console.WriteLine("\tYou just PLAYED with " + Name + " !");
         }
 
         public void Nap()
         {
-            Energy += 3;
-            Console.WriteLine(Name + " took a NAP!");
+            Energy += IncreaseAmount;
+            Console.Clear();
+            Console.WriteLine("\t"+ Name + " took a NAP!");
         }
         public static void Kitty(int tabs, int milliSec)
         {
@@ -171,29 +177,30 @@ namespace VirtualPetsAmok
         } *****/
         public void DisplayPetInfo()
         {
-            Console.WriteLine("\n\tYour pet is a " + Species + ".");
-            Console.WriteLine("\n\tYour pet's name is: " + Name);
-            Console.WriteLine("\n\tYour pet's age is: " + Age);
-            Console.Write("\n\tYour pet's fullness level is: ");
+            Console.Write("\n\tYour "+ Species+ ", " + Name + ", is " + Age + " years old.\n\n");
+            //"\n\tYour pet's name is: " + Name);
+            //"\n\tYour pet's age is: " + Age);
+            Console.Write("\n\tFullness:  ");
             PrintStatusBar(Fullness, 2);
-            Console.Write("\n\tYour pet's happiness level is: ");
+            Console.Write("\n\tHappiness: ");
             PrintStatusBar(Happiness, 2);
-            Console.Write("\n\tYour pet's energy level is: ");
+            Console.Write("\n\tEnergy:    ");
             PrintStatusBar(Energy, 2);
-
+            Console.WriteLine("\n");
         }
         public bool DisplayInteractionMenu()
         {
             
             bool interacted = true;
-
-            Console.WriteLine("_____________________________________________");
-            Console.WriteLine("Choose an action from the menu");
-            Console.WriteLine("F - Feed");
-            Console.WriteLine("P - Play");
-            Console.WriteLine("N - Nap");
-            Console.WriteLine("E - Go Back to Main Menu");
-            Console.Write("Entry.........: ");
+           
+            Console.WriteLine("\n_____________________________________________\n" );
+            
+            Console.WriteLine("\n\tChoose an action from the menu:\n");
+            Console.WriteLine("\tF - Feed ");
+            Console.WriteLine("\tP - Play");
+            Console.WriteLine("\tN - Nap");
+            Console.WriteLine("\tE - Go Back to Main Menu");
+            Console.Write("\n\tEntry.........: ");
             string entry = Console.ReadLine();
             switch (entry.ToLower())
             {
