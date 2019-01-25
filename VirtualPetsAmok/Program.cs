@@ -44,29 +44,8 @@ namespace VirtualPetsAmok
                     {
 
                         pet1.DisplayPetInfo();
-                        Console.WriteLine("_____________________________________________");
-                        Console.WriteLine("Choose an action from the menu");
-                        Console.WriteLine("F - Feed");
-                        Console.WriteLine("P - Play");
-                        Console.WriteLine("N - Nap");
-                        Console.WriteLine("E - Go Back to Main Menu");
-                        Console.Write("Entry.........: ");
-                        string entry = Console.ReadLine();
-                        switch (entry.ToLower())
-                        {
-                            case "f":
-                                pet1.Feed();
-                                break;
-                            case "p":
-                                pet1.Play();
-                                break;
-                            case "n":
-                                pet1.Nap();
-                                break;
-                            default:
-                                
-                                break;
-                        }
+                        while (pet1.DisplayInteractionMenu())
+                        { pet1.DisplayPetInfo(); }
 
                     }
                     else

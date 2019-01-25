@@ -182,5 +182,35 @@ namespace VirtualPetsAmok
             PrintStatusBar(Energy, 2);
 
         }
+        public bool DisplayInteractionMenu()
+        {
+            bool interacted = true;
+
+            Console.WriteLine("_____________________________________________");
+            Console.WriteLine("Choose an action from the menu");
+            Console.WriteLine("F - Feed");
+            Console.WriteLine("P - Play");
+            Console.WriteLine("N - Nap");
+            Console.WriteLine("E - Go Back to Main Menu");
+            Console.Write("Entry.........: ");
+            string entry = Console.ReadLine();
+            switch (entry.ToLower())
+            {
+                case "f":
+                    Feed();
+                    break;
+                case "p":
+                    Play();
+                    break;
+                case "n":
+                    Nap();
+                    break;
+                default: 
+                    interacted = false;                  
+                    break;
+            }
+            return (interacted);
+        }
+
     }
 }
