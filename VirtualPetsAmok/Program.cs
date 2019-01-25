@@ -21,8 +21,8 @@ namespace VirtualPetsAmok
             Console.BackgroundColor = ConsoleColor.Black; //Change console background color back to black
             do
             {
-
-                Console.WriteLine("Type a LETTER to continue: \n\n\t" +
+                
+                Console.Write("Type a LETTER to continue: \n\n\t" +
 
                     "E - Exit \n\t" +
                     "P - View Pet \n\t" +
@@ -39,7 +39,6 @@ namespace VirtualPetsAmok
                 }
                 else if (userInput.Equals("p"))
                 {
-                    Console.Clear();
                     if (petExists)
                     {
 
@@ -57,12 +56,12 @@ namespace VirtualPetsAmok
                         {
 
 
-                            Console.WriteLine("\n\tEnter the pet's species:");
+                            Console.Write("\n\tEnter the pet's species:");
                             pet1.Species = Console.ReadLine();
-                            Console.WriteLine("\n\tEnter the pet's name:");
+                            Console.Write("\n\tEnter the pet's name:");
                             pet1.Name = Console.ReadLine();
 
-                            Console.WriteLine("Congratulations! Your pet's name is " + pet1.Name +
+                            Console.Write("Congratulations! Your pet's name is " + pet1.Name +
                                 "\nWhat is " + pet1.Name + "'s age? ");
                             //Console.WriteLine("\n\tEnter the pet's age:");
                             pet1.Age = System.Convert.ToInt32(Console.ReadLine());
