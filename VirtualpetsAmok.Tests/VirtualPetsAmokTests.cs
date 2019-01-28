@@ -99,7 +99,7 @@ namespace VirtualpetsAmok.Tests
             //Feeding a pet adds 3 to Fullness
             pet.Feed();
 
-            Assert.Equal(8, pet.Fullness);
+            Assert.Equal(10, pet.Fullness);
         }
         [Fact]
         public void Pet_Play_With_Pet()
@@ -112,7 +112,7 @@ namespace VirtualpetsAmok.Tests
             //Playing with a pet adds 3 to Happiness
             pet.Play();
 
-            Assert.Equal(8, pet.Happiness);
+            Assert.Equal(10, pet.Happiness);
         }
         [Fact]
             
@@ -126,8 +126,33 @@ namespace VirtualpetsAmok.Tests
             //napping a pet adds 3 to Energy
             pet.Nap();
 
-            Assert.Equal(8, pet.Energy);
+            Assert.Equal(10, pet.Energy);
         }
+         [Fact]
 
+         public void Shelter_Is_Empty()
+        {
+            Shelter xxx = new Shelter();
+            Assert.Empty(xxx.Pets);
+
+        }
+       [Fact]
+        public void Pet_Is_Added()
+        {
+            var xxx = new Shelter();
+            var billy = new VirtualPet();
+            xxx.AddPet(billy);
+            Assert.NotEmpty(xxx.Pets);
+        }
+        [Fact]
+        public void Pet_Is_Removed()
+        {
+            var xxx = new Shelter();
+            var bob = new VirtualPet();
+            xxx.AddPet(bob);
+            xxx.RemovePet(0);
+            Assert.Empty(xxx.Pets);
+        }
+           
     }
 }

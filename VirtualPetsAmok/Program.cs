@@ -1,6 +1,5 @@
 ﻿using System;
 
-
 namespace VirtualPetsAmok
 {
     class Program
