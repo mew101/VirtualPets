@@ -50,6 +50,8 @@ namespace VirtualPetsAmok
                             {
                                 Console.Clear();
                                 Console.Beep();
+                                VirtualPet.PetDies();
+                                /*
                                 Console.Write(@"
  _;~)                  (~;_
 (   |                  |   )
@@ -62,7 +64,7 @@ namespace VirtualPetsAmok
       ,' ,' ;~~~; ', ',
     ,' ,'    '''    ', ',
   (~  ;               ;  ~)
-   -;_)               (_;-");
+   -;_)               (_;-");*/
                                 Console.WriteLine("\n\t" + pet1.Name + " is dead");
                             }
                         }
@@ -75,17 +77,7 @@ namespace VirtualPetsAmok
 
                         if (Console.ReadLine().ToLower().Equals("y"))
                         {
-
-
-                            Console.Write("\n\tEnter the pet's species: ");
-                            pet1.Species = Console.ReadLine();
-                            Console.Write("\n\tEnter the pet's name: ");
-                            pet1.Name = Console.ReadLine();
-                            Console.Clear();
-                            Console.Write("Congratulations! Your pet's name is " + pet1.Name +
-                                "\nWhat is " + pet1.Name + "'s age? ");
-                            //Console.WriteLine("\n\tEnter the pet's age:");
-                            pet1.Age = System.Convert.ToInt32(Console.ReadLine());
+                            pet1.CreatePet();
                             pet1.DisplayPetInfo();
                             //Console.WriteLine("How hungry is " + pet1.Name + " on a scale of 1 to 10 ? (10 being super FULL)");
                             //pet1.Fullness = System.Convert.ToInt32(Console.ReadLine());

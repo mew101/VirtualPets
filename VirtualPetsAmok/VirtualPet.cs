@@ -5,12 +5,12 @@ using System.Threading;
 
 namespace VirtualPetsAmok
 {
-   public class VirtualPet
+    public class VirtualPet
     {
         public string Species { get; set; }
         public string Name { get; set; }
         public int Age { get; set; }
-        public int Fullness { get; set; }        
+        public int Fullness { get; set; }
         public int Energy { get; set; }
         public int Happiness { get; set; }
         public const int IncreaseAmount = 5;
@@ -21,7 +21,31 @@ namespace VirtualPetsAmok
             Energy = 5;
             Happiness = 5;
             Fullness = 5;
-            
+
+        }
+
+        public VirtualPet(string s, string n, int a)
+        {
+            Species = s;
+            Name = n;
+            Age = a;
+            Energy = 5;
+            Happiness = 5;
+            Fullness = 5;
+
+        }
+
+        public void CreatePet()
+        {
+            Console.Write("\n\tEnter the pet's species: ");
+            Species = Console.ReadLine();
+            Console.Write("\n\tEnter the pet's name: ");
+            Name = Console.ReadLine();
+            Console.Clear();
+            Console.Write("Congratulations! Your pet's name is " + Name +
+                "\nWhat is " + Name + "'s age? ");
+            //Console.WriteLine("\n\tEnter the pet's age:");
+            Age = System.Convert.ToInt32(Console.ReadLine());
         }
         public void TimeIncrement()
         {
@@ -48,18 +72,18 @@ namespace VirtualPetsAmok
         {
             Energy += IncreaseAmount;
             Console.Clear();
-            Console.WriteLine("\t"+ Name + " took a NAP!");
+            Console.WriteLine("\t" + Name + " took a NAP!");
         }
         public static void Kitty(int tabs, int milliSec)
         {
-            
+
             //int milliseconds = 400;
-            
+
             for (int i = 0; i < tabs; i++)
             {
 
                 Console.Clear();
-                if (i < (tabs/2))
+                if (i < (tabs / 2))
                 {
                     for (int t = 0; t < i; t++)
                         Console.Write("\n\n\n");
@@ -69,7 +93,7 @@ namespace VirtualPetsAmok
                     for (int t = tabs; t > i; t--)
                         Console.Write("\n\n\n");
                 }
-                
+
                 Console.WriteLine("\n\n");
                 for (int t = 0; t < i; t++)
                     Console.Write("\t");
@@ -112,11 +136,11 @@ namespace VirtualPetsAmok
             }
 
 
-         //        ____()()
-         //       /       @@
-         // `~~~~~\_;m__m._ >o
+            //        ____()()
+            //       /       @@
+            // `~~~~~\_;m__m._ >o
         }
-        
+
 
 
         public static void PrintStatusBar(int howMuch, int spaceMult)
@@ -177,7 +201,7 @@ namespace VirtualPetsAmok
         } *****/
         public void DisplayPetInfo()
         {
-            Console.Write("\n\tYour "+ Species+ ", " + Name + ", is " + Age + " years old.\n\n");
+            Console.Write("\n\tYour " + Species + ", " + Name + ", is " + Age + " years old.\n\n");
             //"\n\tYour pet's name is: " + Name);
             //"\n\tYour pet's age is: " + Age);
             Console.Write("\n\tFullness:  ");
@@ -190,11 +214,11 @@ namespace VirtualPetsAmok
         }
         public bool DisplayInteractionMenu()
         {
-            
+
             bool interacted = true;
-           
-            Console.WriteLine("\n_____________________________________________\n" );
-            
+
+            Console.WriteLine("\n_____________________________________________\n");
+
             Console.WriteLine("\n\tChoose an action from the menu:\n");
             Console.WriteLine("\tF - Feed ");
             Console.WriteLine("\tP - Play");
@@ -213,8 +237,8 @@ namespace VirtualPetsAmok
                 case "n":
                     Nap();
                     break;
-                default: 
-                    interacted = false;                  
+                default:
+                    interacted = false;
                     break;
             }
             return (interacted);
@@ -228,6 +252,21 @@ namespace VirtualPetsAmok
             }
             return (alive);
         }
-
+        public static void PetDies()
+                {Console.Write("\n\t" +
+@"  _;~)                  (~; _"+ "\n\t" +
+@" (   |                  |   )"+ "\n\t" +
+@"  ~', ',    ,''~'',   ,' ,'~"+ "\n\t" +
+@"      ', ','       ',' ,'"+ "\n\t" +
+@"       ',: {'} {'} :,'"+ "\n\t" +
+@"         ;   /^\   ;"+ "\n\t" +
+@"          ~\  ~  /~"+ "\n\t" +
+@"        ,' ,~~~~~, ',"+ "\n\t" +
+@"      ,' ,' ;~~~; ', ',"+ "\n\t" +
+@"    ,' ,'    '''    ', ',"+ "\n\t" +
+@"  (~  ;               ;  ~)"+ "\n\t" +
+@"   -;_)               (_;-"+ "\n\t" );
+         }      
+        
     }
 }
