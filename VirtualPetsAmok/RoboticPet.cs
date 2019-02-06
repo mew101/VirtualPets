@@ -4,7 +4,21 @@ using System.Text;
 
 namespace VirtualPetsAmok
 {
-    class RoboticPet
+    public class RoboticPet : VirtualPet
     {
+        int Lubricity { get; set; }
+
+        public RoboticPet(string s, string n, int a)
+        {
+            Species = s;
+            Name = n;
+            Age = a;
+            Energy = 5;  //battery level
+            Lubricity = 5;           
+        }
+       
+
+
+
     }
 }
