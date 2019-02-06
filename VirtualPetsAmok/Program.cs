@@ -50,8 +50,7 @@ namespace VirtualPetsAmok
                             {
                                 Console.Clear();
                                 Console.Beep();
-                                pet1.PetDies();
-                                
+                                pet1.PetDies();                               
                             }
                         }
                         Console.Clear();
@@ -74,31 +73,17 @@ namespace VirtualPetsAmok
                         }
 
                     }
-                    //Console.WriteLine("Here's where the pet is");
+                   
 
                 }
                 if ((petExists)&&(gameContinues))
                 {
-                    pet1.TimeIncrement();
-                    
+                    pet1.TimeIncrement();                 
                 }
             } while (gameContinues);
             
             
         }
-       /***
-        public static void DisplayPetInfo(VirtualPet petty)
-        {
-            Console.WriteLine("\n\tYour pet is a " + petty.Species + ".");
-            Console.WriteLine("\n\tYour pet's name is: " + petty.Name);
-            Console.WriteLine("\n\tYour pet's age is: " + petty.Age);
-            Console.Write("\n\tYour pet's fullness level is: ");
-            VirtualPet.PrintStatusBar(petty.Fullness, 2);
-            Console.Write("\n\tYour pet's happiness level is: ");
-            VirtualPet.PrintStatusBar(petty.Happiness, 2);
-            Console.Write("\n\tYour pet's energy level is: ");
-            VirtualPet.PrintStatusBar(petty.Energy, 2);
-
-        }***/
+      
     }
 }
