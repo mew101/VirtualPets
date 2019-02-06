@@ -62,7 +62,7 @@ namespace VirtualPetsAmok
 
                         if (Console.ReadLine().ToLower().Equals("y"))
                         {
-                            pet1.CreatePet();
+                            pet1.SpecifyPet();
                             pet1.DisplayPetInfo();
                             //Console.WriteLine("How hungry is " + pet1.Name + " on a scale of 1 to 10 ? (10 being super FULL)");
                             //pet1.Fullness = System.Convert.ToInt32(Console.ReadLine());

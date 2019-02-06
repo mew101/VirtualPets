@@ -35,7 +35,7 @@ namespace VirtualPetsAmok
 
         }
 
-        public void CreatePet()
+        public void SpecifyPet()
         {
             Console.Write("\n\tEnter the pet's species: ");
             Species = Console.ReadLine();
@@ -47,7 +47,7 @@ namespace VirtualPetsAmok
             //Console.WriteLine("\n\tEnter the pet's age:");
             Age = System.Convert.ToInt32(Console.ReadLine());
         }
-        public void TimeIncrement()
+        public virtual void TimeIncrement()
         {
             Console.Beep();
             Energy--;

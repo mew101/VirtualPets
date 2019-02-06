@@ -6,7 +6,7 @@ namespace VirtualPetsAmok
 {
     public class RoboticPet : VirtualPet
     {
-        int Lubricity { get; set; }
+        public int Lubricity { get; set; }
 
         public RoboticPet(string s, string n, int a)
         {
@@ -14,11 +14,20 @@ namespace VirtualPetsAmok
             Name = n;
             Age = a;
             Energy = 5;  //battery level
-            Lubricity = 5;           
+            Lubricity = 5;
         }
-       
-
-
+        public override void TimeIncrement()
+        {
+            Console.Beep();
+            Energy--;
+            Lubricity--;
+        }
+        public void Charge()
+        {
+            Energy += IncreaseAmount;
+            Console.Clear();
+            Console.WriteLine("\tYou just Charged " + Name + " !");
+        }
 
     }
 }
