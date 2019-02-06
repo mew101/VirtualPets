@@ -128,14 +128,14 @@ namespace VirtualpetsAmok.Tests
 
             Assert.Equal(10, pet.Energy);
         }
-         [Fact]
+        /* [Fact]
 
          public void Shelter_Is_Empty()
         {
             Shelter xxx = new Shelter();
             Assert.Empty(xxx.Pets);
 
-        }
+        }*/
        [Fact]
         public void Pet_Is_Added()
         {
@@ -144,7 +144,7 @@ namespace VirtualpetsAmok.Tests
             xxx.AddPet(billy);
             Assert.NotEmpty(xxx.Pets);
         }
-        [Fact]
+       /*[Fact]
         public void Pet_Is_Removed()
         {
             var xxx = new Shelter();
@@ -152,7 +152,7 @@ namespace VirtualpetsAmok.Tests
             xxx.AddPet(bob);
             xxx.RemovePet(0);
             Assert.Empty(xxx.Pets);
-        }
+        }*/
            
     }
 }

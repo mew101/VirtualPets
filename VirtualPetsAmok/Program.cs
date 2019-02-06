@@ -50,22 +50,8 @@ namespace VirtualPetsAmok
                             {
                                 Console.Clear();
                                 Console.Beep();
-                                VirtualPet.PetDies();
-                                /*
-                                Console.Write(@"
- _;~)                  (~;_
-(   |                  |   )
- ~', ',    ,''~'',   ,' ,'~
-     ', ','       ',' ,'
-       ',: {'} {'} :,'
-         ;   /^\   ;
-          ~\  ~  /~
-        ,' ,~~~~~, ',
-      ,' ,' ;~~~; ', ',
-    ,' ,'    '''    ', ',
-  (~  ;               ;  ~)
-   -;_)               (_;-");*/
-                                Console.WriteLine("\n\t" + pet1.Name + " is dead");
+                                pet1.PetDies();
+                                
                             }
                         }
                         Console.Clear();

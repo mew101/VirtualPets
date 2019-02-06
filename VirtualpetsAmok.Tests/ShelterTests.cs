@@ -13,6 +13,9 @@ namespace VirtualpetsAmok.Tests
         public void Shelter_Is_Empty()
         {
             Shelter xxx = new Shelter();
+            xxx.RemovePet(2);
+            xxx.RemovePet(1);
+            xxx.RemovePet(0);
             Assert.Empty(xxx.Pets);
 
         }
@@ -28,10 +31,10 @@ namespace VirtualpetsAmok.Tests
         public void Pet_Is_Removed()
         {
             var xxx = new Shelter();
-            var bob = new VirtualPet();
-            xxx.AddPet(bob);
-            xxx.RemovePet(0);
-            Assert.Empty(xxx.Pets);
+            //var pet = new VirtualPet();
+            //xxx.AddPet(bob);
+            xxx.RemovePet(2);
+            Assert.Equal(2, xxx.Pets.Count);
         }
 
     }
