@@ -23,7 +23,7 @@ namespace VirtualpetsAmok.Tests
         public void Pet_Is_Added()
         {
             var xxx = new Shelter();
-            var billy = new VirtualPet();
+            var billy = new OrganicPet("Cat", "ROb", 5);
             xxx.AddPet(billy);
             Assert.NotEmpty(xxx.Pets);
         }

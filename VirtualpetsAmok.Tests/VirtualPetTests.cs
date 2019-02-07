@@ -5,7 +5,7 @@ using Xunit;
 namespace VirtualpetsAmok.Tests
 {
     public class PetTests
-    {
+    {/*
         [Fact]
         public void Create_Pet()
         {
@@ -34,16 +34,16 @@ namespace VirtualpetsAmok.Tests
 
             Assert.Equal(7, pet.Age);
         }
-        [Fact]
+       /* [Fact]
         public void Pet_Fullness()
         {
             //Create Pet Fullness Level (will be 1 through 10)
-            VirtualPet pet = new VirtualPet();
+            VirtualPet pet = new OrganicPet();
 
             //pet.Fullness = 4;
 
             Assert.Equal(5, pet.Fullness);
-        }
+        } 
         [Fact]
         public void Pet_Species()
         {
@@ -88,35 +88,35 @@ namespace VirtualpetsAmok.Tests
             Assert.Equal(4, pet.Happiness);
             Assert.Equal(4, pet.Fullness);
         }
+         [Fact]
+         public void Pet_Feed_A_Pet()
+         {
+             VirtualPet pet = new VirtualPet
+             {
+                 Fullness = 5
+             };
+
+             //Feeding a pet adds 3 to Fullness
+             pet.Feed();
+
+             Assert.Equal(10, pet.Fullness);
+         }
+         [Fact]
+         public void Pet_Play_With_Pet()
+         {
+             VirtualPet pet = new VirtualPet
+             {
+                 Happiness = 5
+             };
+
+             //Playing with a pet adds 3 to Happiness
+             pet.Play();
+
+             Assert.Equal(10, pet.Happiness);
+         }
         [Fact]
-        public void Pet_Feed_A_Pet()
-        {
-            VirtualPet pet = new VirtualPet
-            {
-                Fullness = 5
-            };
 
-            //Feeding a pet adds 3 to Fullness
-            pet.Feed();
-
-            Assert.Equal(10, pet.Fullness);
-        }
-        [Fact]
-        public void Pet_Play_With_Pet()
-        {
-            VirtualPet pet = new VirtualPet
-            {
-                Happiness = 5
-            };
-
-            //Playing with a pet adds 3 to Happiness
-            pet.Play();
-
-            Assert.Equal(10, pet.Happiness);
-        }
-        [Fact]
-            
-            public void Pet_Nap_A_Pet()
+        public void Pet_Nap_A_Pet()
         {
             VirtualPet pet = new VirtualPet
             {
@@ -128,31 +128,31 @@ namespace VirtualpetsAmok.Tests
 
             Assert.Equal(10, pet.Energy);
         }
-        /* [Fact]
+         [Fact]
 
          public void Shelter_Is_Empty()
         {
             Shelter xxx = new Shelter();
             Assert.Empty(xxx.Pets);
 
-        }*/
-       [Fact]
+        }
+        [Fact]
         public void Pet_Is_Added()
         {
             var xxx = new Shelter();
-            var billy = new VirtualPet();
+            var billy = new VirtualPet("Dog", "Billy", 3);
             xxx.AddPet(billy);
             Assert.NotEmpty(xxx.Pets);
         }
-       /*[Fact]
-        public void Pet_Is_Removed()
-        {
-            var xxx = new Shelter();
-            var bob = new VirtualPet();
-            xxx.AddPet(bob);
-            xxx.RemovePet(0);
-            Assert.Empty(xxx.Pets);
-        }*/
-           
+        [Fact]
+         public void Pet_Is_Removed()
+         {
+             var xxx = new Shelter();
+             var bob = new VirtualPet();
+             xxx.AddPet(bob);
+             xxx.RemovePet(0);
+             Assert.Empty(xxx.Pets);
+         }*/
+
     }
 }

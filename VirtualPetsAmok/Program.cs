@@ -10,7 +10,7 @@ namespace VirtualPetsAmok
             Console.BackgroundColor = ConsoleColor.DarkBlue; //Change Console background color 
 
             //VirtualPet[] pet1 = new VirtualPet[2];
-            VirtualPet pet1 = new VirtualPet();    //This may need to be moved
+            VirtualPet pet1 = new VirtualPet("Kitty", "Rob", 4);    //This may need to be moved
             bool gameContinues = true;
             bool petExists = false;
 

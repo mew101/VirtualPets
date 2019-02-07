@@ -8,11 +8,11 @@ namespace VirtualPetsAmok
     {
         public int Lubricity { get; set; }
 
-        public RoboticPet(string s, string n, int a)
+        public RoboticPet(string s, string n, int a) : base(s, n, a)
         {
-            Species = s;
-            Name = n;
-            Age = a;
+            //Species = s;
+            //Name = n;
+            //Age = a;
             Energy = 5;  //battery level
             Lubricity = 5;
         }

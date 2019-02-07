@@ -10,19 +10,17 @@ namespace VirtualPetsAmok
         public string Species { get; set; }
         public string Name { get; set; }
         public int Age { get; set; }
-        public int Fullness { get; set; }
         public int Energy { get; set; }
-        public int Happiness { get; set; }
         public const int IncreaseAmount = 5;
 
-        public VirtualPet()
+       /* public VirtualPet()
         {
             Name = "default";
             Energy = 5;
             Happiness = 5;
             Fullness = 5;
 
-        }
+        }*/
 
         public VirtualPet(string s, string n, int a)
         {
@@ -30,8 +28,8 @@ namespace VirtualPetsAmok
             Name = n;
             Age = a;
             Energy = 5;
-            Happiness = 5;
-            Fullness = 5;
+           // Happiness = 5;
+           // Fullness = 5;
 
         }
 
@@ -51,23 +49,17 @@ namespace VirtualPetsAmok
         {
             Console.Beep();
             Energy--;
-            Happiness--;
-            Fullness--;
+            //Happiness--; put in organic class
+            //Fullness--;   put in organic class
         }
-        public void Feed()
-        {
-            Fullness += IncreaseAmount;
-            Console.Clear();
-            Console.WriteLine("\tYou just FED " + Name + " !");
-
-        }
-        public void Play()
+       /*
+        public void Play()     put in organic class
         {
             Happiness += IncreaseAmount;
             Console.Clear();
             Console.WriteLine("\tYou just PLAYED with " + Name + " !");
         }
-
+        */
         public void Nap()
         {
             Energy += IncreaseAmount;
@@ -204,11 +196,11 @@ namespace VirtualPetsAmok
             Console.Write("\n\tYour " + Species + ", " + Name + ", is " + Age + " years old.\n\n");
             //"\n\tYour pet's name is: " + Name);
             //"\n\tYour pet's age is: " + Age);
-            Console.Write("\n\tFullness:  ");
+            /*Console.Write("\n\tFullness:  ");
             PrintStatusBar(Fullness, 2);
             Console.Write("\n\tHappiness: ");
             PrintStatusBar(Happiness, 2);
-            Console.Write("\n\tEnergy:    ");
+            Console.Write("\n\tEnergy:    ");*/
             PrintStatusBar(Energy, 2);
             Console.WriteLine("\n");
         }
@@ -228,12 +220,12 @@ namespace VirtualPetsAmok
             string entry = Console.ReadLine();
             switch (entry.ToLower())
             {
-                case "f":
+               /* case "f":
                     Feed();
                     break;
                 case "p":
                     Play();
-                    break;
+                    break;*/
                 case "n":
                     Nap();
                     break;
@@ -246,7 +238,7 @@ namespace VirtualPetsAmok
         public bool IsAlive()
         {
             bool alive = true;
-            if ((Fullness < 1) || (Happiness < 1) || (Energy < 1))
+            if (/*(Fullness < 1) || (Happiness < 1) ||*/ (Energy < 1))
             {
                 alive = false;
             }
