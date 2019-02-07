@@ -11,6 +11,7 @@ namespace VirtualPetsAmok
         public string Name { get; set; }
         public int Age { get; set; }
         public int Energy { get; set; }
+        public int Happiness { get; set; }
         public const int IncreaseAmount = 5;
 
        /* public VirtualPet()
@@ -28,7 +29,7 @@ namespace VirtualPetsAmok
             Name = n;
             Age = a;
             Energy = 5;
-           // Happiness = 5;
+            Happiness = 5;
            // Fullness = 5;
 
         }

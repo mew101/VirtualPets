@@ -18,6 +18,13 @@ namespace VirtualPetsAmok
             Console.WriteLine("Welcome to the Pet Shelter!");
 
             Console.BackgroundColor = ConsoleColor.Black; //Change console background color back to black
+
+            Shelter xxx = new Shelter();
+            Console.Clear();
+            xxx.DisplayAllPets();
+            Console.ReadLine();
+
+
             do
             {
                 

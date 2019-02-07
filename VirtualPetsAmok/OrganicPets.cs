@@ -7,17 +7,14 @@ namespace VirtualPetsAmok
     public class OrganicPet : VirtualPet
     {
         public int Fullness { get; set; }
-        public int Happiness { get; set; }
-
+        
         public OrganicPet(string s, string n, int a) : base(s, n, a)
         {
             //Species = s;
             //Name = n;
             //Age = a;
             //Energy = 5;
-            Happiness = 5;
             Fullness = 5;
-
         }
 
         public override void TimeIncrement()

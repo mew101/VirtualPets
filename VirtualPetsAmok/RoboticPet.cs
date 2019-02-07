@@ -15,12 +15,14 @@ namespace VirtualPetsAmok
             //Age = a;
             Energy = 5;  //battery level
             Lubricity = 5;
+            
         }
         public override void TimeIncrement()
         {
             Console.Beep();
             Energy--;
             Lubricity--;
+            Happiness--;
         }
         public void Charge()
         {
