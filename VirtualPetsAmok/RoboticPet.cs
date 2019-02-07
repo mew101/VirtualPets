@@ -56,6 +56,7 @@ namespace VirtualPetsAmok
             Console.WriteLine("\n_____________________________________________\n");
 
             Console.WriteLine("\n\tChoose an action from the menu:\n");
+            Console.WriteLine("\tP - Play");
             Console.WriteLine("\tC - Charge ");
             Console.WriteLine("\tL - Lubricate");
             Console.WriteLine("\tE - Go Back to Main Menu");
@@ -70,14 +71,18 @@ namespace VirtualPetsAmok
                 case "l":
                     Lubricate();
                     break;
-                case "n":
-                    Nap();
+                case "p":
+                    Play();
                     break;
                 default:
                     interacted = false;
                     break;
             }
             return (interacted);
+        }
+        public string GetPetInfo()
+        {
+            return ( Species + " " + Name + " " + Age.ToString());
         }
     }
 }

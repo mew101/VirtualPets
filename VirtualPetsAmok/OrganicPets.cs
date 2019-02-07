@@ -32,12 +32,7 @@ namespace VirtualPetsAmok
             Console.WriteLine("\tYou just FED " + Name + " !");
         }
 
-        public void Play()
-        {
-            Happiness += IncreaseAmount;
-            Console.Clear();
-            Console.WriteLine("\tYou just PLAYED with " + Name + " !");
-        }
+        
 
         public override void DisplayPetInfo()
         {
@@ -82,6 +77,10 @@ namespace VirtualPetsAmok
                     break;
             }
             return (interacted);
+        }
+        public string GetPetInfo()
+        {
+            return (Species + " " + Name + " " + Age.ToString());
         }
     }
 }

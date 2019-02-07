@@ -10,20 +10,22 @@ namespace VirtualPetsAmok
             Console.BackgroundColor = ConsoleColor.DarkBlue; //Change Console background color 
 
             //VirtualPet[] pet1 = new VirtualPet[2];
-            OrganicPet pet1 = new OrganicPet("Kitty", "Rob", 4);    //This may need to be moved
+            Shelter allPets = new Shelter();
+
+            OrganicPet pet1 = new OrganicPet("Kitty", "Rob", 4);    //This may need to be removed
             bool gameContinues = true;
-            bool petExists = false;
+            bool petExists = false;//probably remove
 
             OrganicPet.Kitty(10,100); //Kitty(tabs, milliseconds);
             Console.WriteLine("Welcome to the Pet Shelter!");
 
             Console.BackgroundColor = ConsoleColor.Black; //Change console background color back to black
-
+            /*
             Shelter xxx = new Shelter();
             Console.Clear();
             xxx.DisplayAllPets();
             Console.ReadLine();
-
+            */
 
             do
             {
@@ -31,7 +33,7 @@ namespace VirtualPetsAmok
                 Console.Write("\tType a LETTER to continue: \n\n\t" +
 
                     "E - Exit \n\t" +
-                    "P - View Pet \n\t" +
+                    "P - View Pets in Shelter \n\t" +
                     "I - View Instructions");
                 Console.WriteLine("");
                 
@@ -45,7 +47,23 @@ namespace VirtualPetsAmok
                 }
                 else if (userInput.Equals("p"))
                 {
-                    if (petExists)
+                    Console.Clear();
+                    allPets.DisplayAllPets();
+                    Console.WriteLine("Choose a pet: ");
+                    int petChoice = Convert.ToInt32(Console.ReadLine());
+
+                    if ((petChoice >= 0) && (petChoice < allPets.NumPets))
+                    {
+
+
+                    }
+                    
+                    
+                    
+                    
+                    
+                    /*
+                     * if (petExists)
                     {
 
                         pet1.DisplayPetInfo();
@@ -80,6 +98,7 @@ namespace VirtualPetsAmok
                         }
 
                     }
+                    */
                    
 
                 }

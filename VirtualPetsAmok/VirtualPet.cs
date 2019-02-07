@@ -53,8 +53,13 @@ namespace VirtualPetsAmok
             //Happiness--; put in organic class
             //Fullness--;   put in organic class
         }
-        
-        
+
+        public void Play()
+        {
+            Happiness += IncreaseAmount;
+            Console.Clear();
+            Console.WriteLine("\tYou just PLAYED with " + Name + " !");
+        }
         public void Nap()
         {
             Energy += IncreaseAmount;

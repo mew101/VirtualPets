@@ -8,6 +8,7 @@ namespace VirtualPetsAmok
     {
         public List<OrganicPet> OrgPets { set; get; }
         public List<RoboticPet> RoboPets { set; get; }
+        public int NumPets { set; get; }
         public Shelter()
         {
             OrgPets = new List<OrganicPet>();
@@ -19,6 +20,8 @@ namespace VirtualPetsAmok
 
             RoboPets.Add(new RoboticPet("Dog", "Dex", 6));
             RoboPets.Add(new RoboticPet("Cat", "Molly", 8));
+
+            NumPets = OrgPets.Count + RoboPets.Count;
         }
         
         public void AddRoboPet(RoboticPet aPet)
@@ -43,17 +46,19 @@ namespace VirtualPetsAmok
 
         public void DisplayAllPets()
         {
+            Console.WriteLine("Organic Pets");
             for (int i = 0; i < OrgPets.Count; i++)
             {
-                //change to method 
-                Console.WriteLine(i + " " + OrgPets[i].Name);
+                
+                Console.WriteLine(i + ". " + OrgPets[i].GetPetInfo());
             }
+            Console.WriteLine("\nRobotic Pets");
             for (int p = 0; p < RoboPets.Count; p++)
             {
                 //change to method 
                 int x = (OrgPets.Count) + p;
 
-                Console.WriteLine(x +" " + RoboPets[p].Name);
+                Console.WriteLine(x +". " + RoboPets[p].GetPetInfo());
             }
         }
     }
