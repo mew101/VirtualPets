@@ -43,6 +43,8 @@ namespace VirtualPetsAmok
 
             Console.Write("\n\tLubricity:  ");
             PrintStatusBar(Lubricity, 2);
+            Console.Write("\n\tHappiness: ");
+            PrintStatusBar(Happiness, 2);
             Console.Write("\n\tEnergy:    ");
             PrintStatusBar(Energy, 2);
             Console.WriteLine("\n");

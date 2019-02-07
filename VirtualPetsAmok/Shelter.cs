@@ -43,20 +43,58 @@ namespace VirtualPetsAmok
         {
             OrgPets.RemoveAt(n);
         }
+        public int GetNumPets()
+        {
+            return NumPets;
+        }
+        public int GetNumOrganicPets()
+        {
+            return OrgPets.Count;
+        }
+        public int GetNumRoboticPets()
+        {
+            return RoboPets.Count;
+        }
+        public void DisplayShelterPetInfo(int index)
+        {
+            index--;
+            if (index >= OrgPets.Count)
+            {
+                RoboPets[index - OrgPets.Count].DisplayPetInfo();
+            }
+            else
+            {
+                OrgPets[index].DisplayPetInfo();
+            }
+        }
+        public bool DisplayShelterPetInteractions(int index)
+        {
+            index--;
+            bool continueInteracting;
+            if (index >= OrgPets.Count)
+            {
+                continueInteracting = RoboPets[index - OrgPets.Count].DisplayInteractionMenu();
+            }
+            else
+            {
+                continueInteracting = OrgPets[index].DisplayInteractionMenu();
+            }
+            return (continueInteracting);
+        }
 
         public void DisplayAllPets()
         {
             Console.WriteLine("Organic Pets");
             for (int i = 0; i < OrgPets.Count; i++)
             {
-                
-                Console.WriteLine(i + ". " + OrgPets[i].GetPetInfo());
+                int d = i + 1;
+                Console.WriteLine(d + ". " + OrgPets[i].GetPetInfo());
             }
             Console.WriteLine("\nRobotic Pets");
             for (int p = 0; p < RoboPets.Count; p++)
             {
                 //change to method 
-                int x = (OrgPets.Count) + p;
+                int x = (OrgPets.Count) + p + 1;
 
                 Console.WriteLine(x +". " + RoboPets[p].GetPetInfo());
             }

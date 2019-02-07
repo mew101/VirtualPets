@@ -48,16 +48,30 @@ namespace VirtualPetsAmok
                 else if (userInput.Equals("p"))
                 {
                     Console.Clear();
-                    allPets.DisplayAllPets();
-                    Console.WriteLine("Choose a pet: ");
-                    int petChoice = Convert.ToInt32(Console.ReadLine());
-
-                    if ((petChoice >= 0) && (petChoice < allPets.NumPets))
+                    int petChoice = 0;
+                    do
                     {
+                        allPets.DisplayAllPets();
+                        Console.WriteLine("Choose a pet: ");
+                        petChoice = Convert.ToInt32(Console.ReadLine());
 
+                        if ((petChoice > 0) && (petChoice <= allPets.GetNumPets()))
+                        {
+                            bool continueInteracting = true;
+                            do
+                            {
+                                allPets.DisplayShelterPetInfo(petChoice);
+                                continueInteracting = allPets.DisplayShelterPetInteractions(petChoice);
+                            } while (continueInteracting);
+                        }
+                        else
+                        {
+                            //invalid choice
+                            Console.WriteLine("Please choose a valid pet");
+                        }
+                    } while (petChoice != 0);
 
-                    }
-                    
+                    Console.ReadLine();
                     
                     
                     
