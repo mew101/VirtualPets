@@ -171,20 +171,7 @@ namespace VirtualPetsAmok
             Console.Write("\b" + howMuch + "\n");
             Console.ResetColor();
         }
-        /********
-        public static void DisplayPetInfo(VirtualPet petty)
-        {
-            Console.WriteLine("\n\tYour pet is a " + petty.Species + ".");
-            Console.WriteLine("\n\tYour pet's name is: " + petty.Name);
-            Console.WriteLine("\n\tYour pet's age is: " + petty.Age);
-            Console.Write("\n\tYour pet's fullness level is: ");
-            PrintStatusBar(petty.Fullness, 2);
-            Console.Write("\n\tYour pet's happiness level is: ");
-            PrintStatusBar(petty.Happiness, 2);
-            Console.Write("\n\tYour pet's energy level is: ");
-            PrintStatusBar(petty.Energy, 2);
-
-        } *****/
+       
         public virtual void DisplayPetInfo()
         {
             Console.Write("\n\tYour " + Species + ", " + Name + ", is " + Age + " years old.\n\n");
@@ -197,37 +184,9 @@ namespace VirtualPetsAmok
             PrintStatusBar(Energy, 2);
             Console.WriteLine("\n");
         }
-        public bool DisplayInteractionMenu()
-        {
-
-            bool interacted = true;
-
-            Console.WriteLine("\n_____________________________________________\n");
-
-            Console.WriteLine("\n\tChoose an action from the menu:\n");
-            Console.WriteLine("\tF - Feed ");
-            Console.WriteLine("\tP - Play");
-            Console.WriteLine("\tN - Nap");
-            Console.WriteLine("\tE - Go Back to Main Menu");
-            Console.Write("\n\tEntry.........: ");
-            string entry = Console.ReadLine();
-            switch (entry.ToLower())
-            {
-                case "f":
-                    Feed();
-                    break;
-                case "p":
-                    Play();
-                    break;*/
-                case "n":
-                    Nap();
-                    break;
-                default:
-                    interacted = false;
-                    break;
-            }
-            return (interacted);
-        }
+       
+           
+        
         public bool IsAlive()
         {
             bool alive = true;
