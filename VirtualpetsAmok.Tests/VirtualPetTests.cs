@@ -88,32 +88,8 @@ namespace VirtualpetsAmok.Tests
             Assert.Equal(4, pet.Happiness);
             Assert.Equal(4, pet.Fullness);
         }
-         [Fact]
-         public void Pet_Feed_A_Pet()
-         {
-             VirtualPet pet = new VirtualPet
-             {
-                 Fullness = 5
-             };
-
-             //Feeding a pet adds 3 to Fullness
-             pet.Feed();
-
-             Assert.Equal(10, pet.Fullness);
-         }
-         [Fact]
-         public void Pet_Play_With_Pet()
-         {
-             VirtualPet pet = new VirtualPet
-             {
-                 Happiness = 5
-             };
-
-             //Playing with a pet adds 3 to Happiness
-             pet.Play();
-
-             Assert.Equal(10, pet.Happiness);
-         }
+        
+        
         [Fact]
 
         public void Pet_Nap_A_Pet()

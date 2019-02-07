@@ -19,18 +19,27 @@ namespace VirtualPetsAmok
             Fullness = 5;
 
         }
-        public override void TimeIncrement() 
+
+        public override void TimeIncrement()
         {
             Console.Beep();
             Energy--;
-            Happiness--; 
-            Fullness--;   
+            Happiness--;
+            Fullness--;
         }
+
         public void Feed()
         {
-            Fullness += IncreaseAmount; 
+            Fullness += IncreaseAmount;
             Console.Clear();
             Console.WriteLine("\tYou just FED " + Name + " !");
         }
-    }
+
+        public void Play()
+        {
+            Happiness += IncreaseAmount;
+            Console.Clear();
+            Console.WriteLine("\tYou just PLAYED with " + Name + " !");
+        }
+    }    
 }

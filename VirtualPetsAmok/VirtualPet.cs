@@ -52,14 +52,8 @@ namespace VirtualPetsAmok
             //Happiness--; put in organic class
             //Fullness--;   put in organic class
         }
-       /*
-        public void Play()     put in organic class
-        {
-            Happiness += IncreaseAmount;
-            Console.Clear();
-            Console.WriteLine("\tYou just PLAYED with " + Name + " !");
-        }
-        */
+        
+        
         public void Nap()
         {
             Energy += IncreaseAmount;
@@ -191,16 +185,15 @@ namespace VirtualPetsAmok
             PrintStatusBar(petty.Energy, 2);
 
         } *****/
-        public void DisplayPetInfo()
+        public virtual void DisplayPetInfo()
         {
             Console.Write("\n\tYour " + Species + ", " + Name + ", is " + Age + " years old.\n\n");
-            //"\n\tYour pet's name is: " + Name);
-            //"\n\tYour pet's age is: " + Age);
+            
             /*Console.Write("\n\tFullness:  ");
             PrintStatusBar(Fullness, 2);
             Console.Write("\n\tHappiness: ");
-            PrintStatusBar(Happiness, 2);
-            Console.Write("\n\tEnergy:    ");*/
+            PrintStatusBar(Happiness, 2);*/
+            Console.Write("\n\tEnergy:    ");
             PrintStatusBar(Energy, 2);
             Console.WriteLine("\n");
         }
@@ -220,7 +213,7 @@ namespace VirtualPetsAmok
             string entry = Console.ReadLine();
             switch (entry.ToLower())
             {
-               /* case "f":
+                case "f":
                     Feed();
                     break;
                 case "p":

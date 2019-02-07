@@ -33,7 +33,7 @@ namespace VirtualpetsAmok.Tests
         {
             OrganicPet pet = new OrganicPet("Dog", "Alexa", 2);
 
-           // pet.Charge();
+            // pet.Charge();
 
             Assert.Equal(5, pet.Energy);
         }
@@ -41,10 +41,19 @@ namespace VirtualpetsAmok.Tests
         public void Pet_Feed_A_Pet()
         {
             OrganicPet pet = new OrganicPet("Dog", "Alexa", 2);
-           
+
             pet.Feed();
 
             Assert.Equal(10, pet.Fullness);
+        }
+        [Fact]
+        public void Pet_Play_With_Pet()
+        {
+            OrganicPet pet = new OrganicPet("Dog", "Alexa", 2);
+
+            pet.Play();
+
+            Assert.Equal(10, pet.Happiness);
         }
     }
 }
