@@ -28,6 +28,7 @@ namespace VirtualPetsAmok
         public void Feed()
         {
             Fullness += IncreaseAmount;
+            if (Fullness >= Max) Fullness = Max;
             Console.Clear();
             Console.WriteLine("\tYou just FED " + Name + " !");
         }
@@ -70,7 +71,7 @@ namespace VirtualPetsAmok
             Console.WriteLine("\tE - Go Back to Shelter");
             Console.Write("\n\tEntry.........: ");
             string entry = Console.ReadLine();
-
+            
             switch (entry.ToLower())
             {
                 case "f":
@@ -99,6 +100,17 @@ namespace VirtualPetsAmok
             string n = Name.PadRight(15);
             string a = Age.ToString().PadRight(6);
             return (s+n+a);
+        }
+        public override bool IsAlive()
+        {
+            if(Happiness > 0 && Energy > 0 && Fullness > 0)
+            {
+                return (true); //alive
+            }
+            else
+            {
+                return (false); //dead
+            }
         }
     }
 }

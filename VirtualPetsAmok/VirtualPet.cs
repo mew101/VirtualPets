@@ -12,16 +12,17 @@ namespace VirtualPetsAmok
         public int Age { get; set; }
         public int Energy { get; set; }
         public int Happiness { get; set; }
-        public const int IncreaseAmount = 5;
+        public const int IncreaseAmount = 6;
+        public const int Max = 15;
 
-       /* public VirtualPet()
-        {
-            Name = "default";
-            Energy = 5;
-            Happiness = 5;
-            Fullness = 5;
+        /* public VirtualPet()
+         {
+             Name = "default";
+             Energy = 5;
+             Happiness = 5;
+             Fullness = 5;
 
-        }*/
+         }*/
 
         public VirtualPet(string s, string n, int a)
         {
@@ -57,12 +58,14 @@ namespace VirtualPetsAmok
         public void Play()
         {
             Happiness += IncreaseAmount;
+            if (Happiness >= Max) Happiness = Max;
             Console.Clear();
             Console.WriteLine("\tYou just PLAYED with " + Name + " !");
         }
         public void Nap()
         {
             Energy += IncreaseAmount;
+            if (Energy >= Max) Energy = Max;
             Console.Clear();
             Console.WriteLine("\t" + Name + " took a NAP!");
         }
@@ -194,7 +197,7 @@ namespace VirtualPetsAmok
        
            
         
-        public bool IsAlive()
+        public virtual bool IsAlive()
         {
             bool alive = true;
             if (/*(Fullness < 1) || (Happiness < 1) ||*/ (Energy < 1))
@@ -204,7 +207,15 @@ namespace VirtualPetsAmok
             return (alive);
         }
         public void PetDies()
-        { 
+        {
+            Console.Clear();
+            string sadNews = "SAD NEWS!";
+            for (int x=0; x<sadNews.Length; x++)
+            {
+                Console.Write(sadNews[x]);
+                Console.Beep(x * 100 + 500, 50);
+            }
+            
             Console.Write("\n\t" +
             @"  _;~)                  (~;_"+ "\n\t" +
             @" (   |                  |   )"+ "\n\t" +
@@ -220,7 +231,8 @@ namespace VirtualPetsAmok
             @"   -;_)               (_;-"+ "\n\t" );
 
             Console.WriteLine("\n\t\t" + Name + " is dead");
-
+            Console.WriteLine("PRESS ANY KEY TO CONTINUE!");
+            Console.ReadKey();
         }
 
     }

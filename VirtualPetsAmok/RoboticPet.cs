@@ -27,12 +27,14 @@ namespace VirtualPetsAmok
         public void Charge()
         {
             Energy += IncreaseAmount;
+            if (Energy >= Max) Energy = Max;
             Console.Clear();
             Console.WriteLine("\tYou just Charged " + Name + " !");
         }
         public void Lubricate()
         {
             Lubricity += IncreaseAmount;
+            if (Lubricity >= Max) Lubricity = Max;
             Console.Clear();
             Console.WriteLine("\tYou just Lubricated " + Name + " !");
         }
@@ -92,6 +94,17 @@ namespace VirtualPetsAmok
             string n = Name.PadRight(15);
             string a = Age.ToString().PadRight(6);
             return (s + n + a);
+        }
+        public override bool IsAlive()
+        {
+            if (Happiness > 0 && Energy > 0 && Lubricity > 0)
+            {
+                return (true); //alive
+            }
+            else
+            {
+                return (false); //dead
+            }
         }
     }
 }

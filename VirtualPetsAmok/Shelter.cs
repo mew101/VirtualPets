@@ -23,6 +23,10 @@ namespace VirtualPetsAmok
 
             NumPets = OrgPets.Count + RoboPets.Count;
         }
+        public int HowManyPetsInShelter()
+        {
+            return (NumPets);
+        }
         public void CreateOrgPet()
         {
             Console.WriteLine("Create Organic Pet");
@@ -61,6 +65,16 @@ namespace VirtualPetsAmok
             OrgPets.RemoveAt(n);
             NumPets--;
         }
+        public void RemoveOrgPet(OrganicPet temp)
+        {
+            OrgPets.Remove(temp);
+            NumPets--;
+        }
+        public void RemoveRoboPet(RoboticPet temp)
+        {
+            RoboPets.Remove(temp);
+            NumPets--;
+        }
         public int GetNumPets()
         {
             return NumPets;
@@ -72,6 +86,18 @@ namespace VirtualPetsAmok
         public int GetNumRoboticPets()
         {
             return RoboPets.Count;
+        }
+        public void RemoveAPet(int index)
+        {
+            index--;
+            if (index >= OrgPets.Count)
+            {
+                RemoveRoboPet(index - OrgPets.Count);
+            }
+            else
+            {
+                RemoveOrgPet(index);
+            }
         }
         public void DisplayShelterPetInfo(int index)
         {
@@ -87,7 +113,7 @@ namespace VirtualPetsAmok
         }
         public bool DisplayShelterPetInteractions(int index)
         {
-            index--;
+            index--; //reduce by 1 since index starts @ 0
             bool continueInteracting;
             if (index >= OrgPets.Count)
             {
@@ -150,6 +176,59 @@ namespace VirtualPetsAmok
             {
                 yyy.TimeIncrement();
             }
+        }
+        public void CheckForDeath()
+        {
+            /*foreach (OrganicPet xxx in OrgPets)
+            {
+                if (!(xxx.IsAlive()))
+                {
+                    xxx.PetDies();
+                    RemoveOrgPet(xxx);
+                }
+            }
+            foreach (RoboticPet yyy in RoboPets)
+            {
+                if (!(yyy.IsAlive()))
+                {
+                    yyy.PetDies();
+                    RemoveRoboPet(yyy);
+                }
+            }*/
+            int[] removals = new int[20];
+            int howMany = 0;
+            for (int i = 0; i < OrgPets.Count; i++)
+            {
+                if (!OrgPets[i].IsAlive())
+                {
+                    OrgPets[i].PetDies();
+                    removals[howMany] = i;
+                    howMany++;
+
+                }
+            }
+            for (int x=howMany-1; x>=0; x--)
+            {
+                RemoveOrgPet(removals[x]);
+            }
+
+            
+            howMany = 0;
+            for (int i = 0; i < RoboPets.Count; i++)
+            {
+                if (!RoboPets[i].IsAlive())
+                {
+                    RoboPets[i].PetDies();
+                    removals[howMany] = i;
+                    howMany++;
+
+                }
+            }
+            for (int x = howMany - 1; x >= 0; x--)
+            {
+                RemoveRoboPet(removals[x]);
+            }
+
         }
     }
     
