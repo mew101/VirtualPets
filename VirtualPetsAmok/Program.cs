@@ -6,7 +6,7 @@ namespace VirtualPetsAmok
     {
         static void Main(string[] args)
         {
-            Console.SetWindowSize(124, 40);
+            Console.SetWindowSize(130, 40);
             Console.BackgroundColor = ConsoleColor.DarkBlue; //Change Console background color 
 
             //VirtualPet[] pet1 = new VirtualPet[2];
@@ -154,38 +154,8 @@ namespace VirtualPetsAmok
                 else if (userInput.Equals("i"))
                 {
                     Console.Clear();
-                    Console.WriteLine("\tWELCOME TO THE PET SHELTER!" +
-
-@"To get started, select which pet you would like to take care of.You can either create and name your own pet, or choose from one that is already in the pet shelter.\t\n" +
-
-
-@"ADD A PET\t\n" +
-
-@"Press A to create your own robotic or organic pet.Once you enter your pet's species, name, and age, you will see it appear in the pet shelter.\t\n" +
-
-@"VIEW PETS IN SHELTER\t\n" +
-
-@"Two organic pets, Buster and Billy, and two robotic pets, Dex and Molly, are already in the shelter with your pet, if you created one. Choose a pet to take care of by selecting the number next to its species.\t\n" +
-
-@"TAKING CARE OF YOUR PET\t\n" +
-
-@"\t\nOrganic pets need to be fed, payed with, and rested by pressing F, P, or N on your keyboard.Robotic pets need to be played with, charged, and lubricated by pressing the P, C, or L, keys.To return to the shelter and choose another pet, choose E for exit.\n\t" +
-
-@"STATUS BAR\n\t" +
-
-
-@"Watch your pet's status bar to make sure it is being taken care of. Each time you do something for your pet, you will increase one of its stats, but the others will decrease. If any of the stats goes down to 0, your pet dies.\t\n" +
-
-
-@"To go back to the shelter at any time, press E.\n ");
-
-
-
-
-
-
-
-                  Console.WriteLine("...Press any key to continue");
+                    displayInstructions();
+                    Console.WriteLine("...Press any key to continue");
                     Console.ReadKey();
                 }
                 else if (userInput.Equals("g"))
@@ -251,5 +221,27 @@ namespace VirtualPetsAmok
             
         }
         //public static bool isDigit(string temp)
+        static void displayInstructions()
+        {
+            Console.WriteLine("\tWELCOME TO THE PET SHELTER!\n\n" +
+            "\t" + "To get started, select which pet you would like to take care of.\n" + 
+            "\t" + "You can either create and name your own pet, \n" +
+            "\t" + "or choose from one that is already in the pet shelter.\t\n\n" +
+            "\t" + "ADD A PET\t\n\n" +
+            "\t" + "Press A to create your own robotic or organic pet.Once you enter your pet's species, name, and age, you will \n" +
+            "\t" + "see it appear in the pet shelter.\t\n\n" +
+            "\t" + "VIEW PETS IN SHELTER\t\n\n" +
+            "\t" + "Two organic pets, Buster and Billy, and two robotic pets, Dex and Molly, are already in the shelter with your pet, \n" +
+            "\t" + "if you created one. Choose a pet to take care of by selecting the number next to its species.\t\n" +
+            "\t" + "TAKING CARE OF YOUR PET\t\n\n" +
+            "\t" + "Organic pets need to be fed, payed with, and rested by pressing F, P, or N on your keyboard.Robotic pets need \n" +
+            "\t" + "to be played with, charged, and lubricated by pressing the P, C, or L, keys.\n" +
+            "\t" + "To return to the shelter and choose another pet, \n" +
+            "\t" + "choose E for exit.\n\n" +
+            "\t" + "STATUS BAR\n\n" +
+            "\t" + "Watch your pet's status bar to make sure it is being taken care of. Each time you do something for your pet, you will\n " +
+            "\t" + "increase one of its stats, but the others will decrease. If any of the stats goes down to 0, your pet dies.\t\n" +
+            "\t" + "To go back to the shelter at any time, press E.\n ");
+        }
     }
 }
