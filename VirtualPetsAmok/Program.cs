@@ -30,12 +30,11 @@ namespace VirtualPetsAmok
             do
             {
                 
-                Console.Write("\tType a LETTER to continue: \n\n\t" +
-
-                    "E - Exit \n\t" +
-                    "P - View Pets in Shelter \n\t" +
-                    "I - View Instructions");
-                Console.WriteLine("");
+                Console.Write("\tType a LETTER to continue:       \n\n" +
+                    "A - Add a Pet            \n" +
+                    "P - View Pets in Shelter \n" +
+                    "I - View Instructions    \n" +
+                    "E - Exit                 \n\n");
                 
                 string userInput = Console.ReadLine().ToLower();
                 Console.Clear();
@@ -51,8 +50,8 @@ namespace VirtualPetsAmok
                     int petChoice = 0;
                     do
                     {
-                        allPets.DisplayAllPets();
-                        Console.WriteLine("\n\tChoose a pet: ");
+                        allPets.DisplayAllPetsZ();
+                        Console.Write("\n\tChoose a pet: ");
                         petChoice = Convert.ToInt32(Console.ReadLine());
 
                         if ((petChoice > 0) && (petChoice <= allPets.GetNumPets()))
@@ -70,51 +69,40 @@ namespace VirtualPetsAmok
                             Console.WriteLine("Please choose a valid pet");
                         }
                     } while (petChoice != 0);
-
-                    Console.ReadLine();
+                    //Console.ReadLine()
+                }
+                else if (userInput.Equals("a"))
+                {
+                    Console.WriteLine("Add a Pet...");
+                    Console.WriteLine("Which type of Pet?");
+                    Console.WriteLine("\t1. Organic");
+                    Console.WriteLine("\t2. Robotic");
+                    int petType = Convert.ToInt32(Console.ReadLine());
                     
-                    
-                    
-                    
-                    /*
-                     * if (petExists)
+                    switch (petType)
                     {
-
-                        pet1.DisplayPetInfo();
-                        while (pet1.DisplayInteractionMenu())
-                        {
-                            pet1.TimeIncrement();
-                            pet1.DisplayPetInfo();
-                            if (!pet1.IsAlive())
-                            {
-                                Console.Clear();
-                                Console.Beep();
-                                pet1.PetDies();                               
-                            }
-                        }
-                        Console.Clear();
+                        case 1:
+                            allPets.CreateOrgPet();
+                            break;
+                        case 2:
+                            allPets.CreateRoboPet();
+                            break;
+                        default:
+                            Console.WriteLine("Choose Organic or Robotic");
+                            break;
                     }
-                    else
-                    {
-                        Console.WriteLine("We Don't have any pets yet.");
-                        Console.WriteLine("Enter Y to create a Pet.");
 
-                        if (Console.ReadLine().ToLower().Equals("y"))
-                        {
-                            pet1.SpecifyPet();
-                            pet1.DisplayPetInfo();
-                            //Console.WriteLine("How hungry is " + pet1.Name + " on a scale of 1 to 10 ? (10 being super FULL)");
-                            //pet1.Fullness = System.Convert.ToInt32(Console.ReadLine());
+                }
+                else if (userInput.Equals("i"))
+                {
 
-                            petExists = true;
-
-                           
-                        }
-
-                    }
-                    */
-                   
-
+                }
+                else
+                {
+                    Console.WriteLine("Please choose a valid option!");
+                    Console.WriteLine("...Press any key to continue.");
+                    Console.ReadKey();
+                    Console.Clear();
                 }
                 if ((petExists)&&(gameContinues))
                 {

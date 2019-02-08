@@ -86,5 +86,12 @@ namespace VirtualPetsAmok
         {
             return ( Species + " " + Name + " " + Age.ToString());
         }
+        public string GetPetInfoFormatted()
+        {
+            string s = Species.PadRight(15);
+            string n = Name.PadRight(15);
+            string a = Age.ToString().PadRight(6);
+            return (s + n + a);
+        }
     }
 }
