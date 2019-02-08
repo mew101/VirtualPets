@@ -65,7 +65,7 @@ namespace VirtualPetsAmok
                         {
 
                             Console.Clear();
-                            allPets.DisplayAllPetsZ();
+                            allPets.DisplayAllPetsZZ();
                             Console.Write("\n\tChoose a pet (0 to Go Back): ");
 
                             //petChoice = Convert.ToInt32(Console.ReadLine());

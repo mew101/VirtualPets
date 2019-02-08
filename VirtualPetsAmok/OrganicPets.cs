@@ -53,10 +53,15 @@ namespace VirtualPetsAmok
         public void DisplayPetStats()
         {
             //Console.Write("\tFullness:  ");
+            int x = Console.CursorLeft;
+            int y = Console.CursorTop;
             PrintStatusBar(Fullness, 2);
             //Console.Write("\tHappiness: ");
+
+            Console.SetCursorPosition(x + 30, y);
             PrintStatusBar(Happiness, 2);
             //Console.Write("\tEnergy:    ");
+            Console.SetCursorPosition(x + 60, y);
             PrintStatusBar(Energy, 2);
             //Console.WriteLine("\n");
         }
