@@ -55,7 +55,7 @@ namespace VirtualPetsAmok
                     //Environment.Exit(0);
                     gameContinues = false;
                 }
-                else if (userInput.Equals("p"))
+                else if (userInput.Equals("p"))//Display Shelter
                 {
                     if (allPets.HowManyPetsInShelter() > 0)
                     {

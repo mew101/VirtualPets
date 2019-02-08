@@ -21,8 +21,11 @@ namespace VirtualPetsAmok
         {
             Console.Beep();
             Energy--;
+            if (Energy <= 0) Energy = 0;
             Lubricity--;
+            if (Lubricity <= 0) Lubricity = 0;
             Happiness--;
+            if (Happiness <= 0) Happiness = 0;
         }
         public void Charge()
         {
@@ -50,6 +53,16 @@ namespace VirtualPetsAmok
             Console.Write("\n\tEnergy:     ");
             PrintStatusBar(Energy, 2);
             Console.WriteLine("\n");
+        }
+        public void DisplayPetStats()
+        {
+            //Console.Write("\tFullness:  ");
+            PrintStatusBar(Lubricity, 2);
+            //Console.Write("\tHappiness: ");
+            PrintStatusBar(Happiness, 2);
+            //Console.Write("\tEnergy:    ");
+            PrintStatusBar(Energy, 2);
+            //Console.WriteLine("\n");
         }
 
         public bool DisplayInteractionMenu()

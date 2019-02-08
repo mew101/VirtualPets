@@ -21,8 +21,11 @@ namespace VirtualPetsAmok
         {
             Console.Beep();
             Energy--;
+            if (Energy <= 0) Energy = 0;
             Happiness--;
+            if (Happiness <= 0) Happiness = 0;
             Fullness--;
+            if (Fullness <= 0) Fullness = 0;
         }
 
         public void Feed()
@@ -49,11 +52,11 @@ namespace VirtualPetsAmok
         }
         public void DisplayPetStats()
         {
-            Console.Write("\tFullness:  ");
+            //Console.Write("\tFullness:  ");
             PrintStatusBar(Fullness, 2);
-            Console.Write("\tHappiness: ");
+            //Console.Write("\tHappiness: ");
             PrintStatusBar(Happiness, 2);
-            Console.Write("\tEnergy:    ");
+            //Console.Write("\tEnergy:    ");
             PrintStatusBar(Energy, 2);
             //Console.WriteLine("\n");
         }

@@ -111,6 +111,7 @@ namespace VirtualPetsAmok
                 OrgPets[index].DisplayPetInfo();
             }
         }
+        
         public bool DisplayShelterPetInteractions(int index)
         {
             index--; //reduce by 1 since index starts @ 0
