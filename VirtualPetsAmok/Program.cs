@@ -31,10 +31,10 @@ namespace VirtualPetsAmok
             {
                 
                 Console.Write("\tType a LETTER to continue:       \n\n" +
-                    "A - Add a Pet            \n" +
-                    "P - View Pets in Shelter \n" +
-                    "I - View Instructions    \n" +
-                    "E - Exit                 \n\n");
+                    "\tA - Add a Pet            \n" +
+                    "\tP - View Pets in Shelter \n" +
+                    "\tI - View Instructions    \n" +
+                    "\tE - Exit                 \n\n");
                 
                 string userInput = Console.ReadLine().ToLower();
                 Console.Clear();
@@ -52,7 +52,18 @@ namespace VirtualPetsAmok
                     {
                         allPets.DisplayAllPetsZ();
                         Console.Write("\n\tChoose a pet: ");
-                        petChoice = Convert.ToInt32(Console.ReadLine());
+
+                        //petChoice = Convert.ToInt32(Console.ReadLine());
+                        string petChoiceString = Console.ReadLine();
+                        if (char.IsNumber(petChoiceString[0]) && petChoiceString.Length==1)
+                        {
+                            petChoice = Convert.ToInt32(petChoiceString);
+                            //Console.WriteLine("petChoice: " + petChoice);
+                        }
+                        else
+                        {
+                            petChoice = -1;
+                        }
 
                         if ((petChoice > 0) && (petChoice <= allPets.GetNumPets()))
                         {
@@ -112,6 +123,6 @@ namespace VirtualPetsAmok
             
             
         }
-      
+        //public static bool isDigit(string temp)
     }
 }
