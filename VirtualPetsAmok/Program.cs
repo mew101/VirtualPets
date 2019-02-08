@@ -52,7 +52,7 @@ namespace VirtualPetsAmok
                     do
                     {
                         allPets.DisplayAllPets();
-                        Console.WriteLine("Choose a pet: ");
+                        Console.WriteLine("\n\tChoose a pet: ");
                         petChoice = Convert.ToInt32(Console.ReadLine());
 
                         if ((petChoice > 0) && (petChoice <= allPets.GetNumPets()))

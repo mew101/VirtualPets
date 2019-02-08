@@ -84,19 +84,19 @@ namespace VirtualPetsAmok
 
         public void DisplayAllPets()
         {
-            Console.WriteLine("Organic Pets");
+            Console.WriteLine("\n\tOrganic Pets");
             for (int i = 0; i < OrgPets.Count; i++)
             {
                 int d = i + 1;
-                Console.WriteLine(d + ". " + OrgPets[i].GetPetInfo());
+                Console.WriteLine("        " + d + ". " + OrgPets[i].GetPetInfo());
             }
-            Console.WriteLine("\nRobotic Pets");
+            Console.WriteLine("\n\tRobotic Pets");
             for (int p = 0; p < RoboPets.Count; p++)
             {
                 //change to method 
                 int x = (OrgPets.Count) + p + 1;
 
-                Console.WriteLine(x +". " + RoboPets[p].GetPetInfo());
+                Console.WriteLine("        " + x +". " + RoboPets[p].GetPetInfo());
             }
         }
     }
