@@ -12,9 +12,9 @@ namespace VirtualPetsAmok
             //VirtualPet[] pet1 = new VirtualPet[2];
             Shelter allPets = new Shelter();
 
-            OrganicPet pet1 = new OrganicPet("Kitty", "Rob", 4);    //This may need to be removed
+            //OrganicPet pet1 = new OrganicPet("Kitty", "Rob", 4);    //This may need to be removed
             bool gameContinues = true;
-            bool petExists = false;//probably remove
+            //bool petExists = false;//probably remove
 
             OrganicPet.Kitty(10,100); //Kitty(tabs, milliseconds);
             Console.WriteLine("Welcome to the Pet Shelter!");
@@ -64,8 +64,9 @@ namespace VirtualPetsAmok
                         do
                         {
 
+                            Console.Clear();
                             allPets.DisplayAllPetsZ();
-                            Console.Write("\n\tChoose a pet: ");
+                            Console.Write("\n\tChoose a pet (0 to Go Back): ");
 
                             //petChoice = Convert.ToInt32(Console.ReadLine());
                             string petChoiceString = Console.ReadLine();
@@ -86,9 +87,10 @@ namespace VirtualPetsAmok
                                 do
                                 {
 
+                                    Console.Clear();
                                     allPets.DisplayShelterPetInfo(petChoice);
                                     continueInteracting = allPets.DisplayShelterPetInteractions(petChoice);
-                                    allPets.TimePasses();
+                                    if(continueInteracting) allPets.TimePasses();
                                     allPets.CheckForDeath();
                                     if (petChoice > allPets.HowManyPetsInShelter())
                                     {
@@ -213,10 +215,7 @@ namespace VirtualPetsAmok
                     Console.ReadKey();
                     Console.Clear();
                 }
-                if ((petExists)&&(gameContinues))
-                {
-                    pet1.TimeIncrement();                 
-                }
+                Console.Clear();
             } while (gameContinues);
             
             

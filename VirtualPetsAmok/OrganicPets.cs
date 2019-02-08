@@ -101,9 +101,20 @@ namespace VirtualPetsAmok
             string a = Age.ToString().PadRight(6);
             return (s+n+a);
         }
-        public override bool IsAlive()
+        /*public override bool IsAlive()//All need to be above 0
         {
             if(Happiness > 0 && Energy > 0 && Fullness > 0)
+            {
+                return (true); //alive
+            }
+            else
+            {
+                return (false); //dead
+            }
+        }*/
+        public override bool IsAlive()//One attribute need to be above 0
+        {
+            if (Happiness > 0 || Energy > 0 || Fullness > 0)
             {
                 return (true); //alive
             }

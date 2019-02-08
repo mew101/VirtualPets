@@ -45,9 +45,9 @@ namespace VirtualPetsAmok
 
             Console.Write("\n\tLubricity:  ");
             PrintStatusBar(Lubricity, 2);
-            Console.Write("\n\tHappiness: ");
+            Console.Write("\n\tHappiness:  ");
             PrintStatusBar(Happiness, 2);
-            Console.Write("\n\tEnergy:    ");
+            Console.Write("\n\tEnergy:     ");
             PrintStatusBar(Energy, 2);
             Console.WriteLine("\n");
         }
@@ -95,9 +95,20 @@ namespace VirtualPetsAmok
             string a = Age.ToString().PadRight(6);
             return (s + n + a);
         }
-        public override bool IsAlive()
+        /*public override bool IsAlive()//All need to be above 0
         {
             if (Happiness > 0 && Energy > 0 && Lubricity > 0)
+            {
+                return (true); //alive
+            }
+            else
+            {
+                return (false); //dead
+            }
+        }*/
+        public override bool IsAlive()//One attribute need to be above 0
+        {
+            if (Happiness > 0 || Energy > 0 || Lubricity > 0)
             {
                 return (true); //alive
             }
