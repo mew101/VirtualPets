@@ -36,6 +36,7 @@ namespace VirtualPetsAmok
             RoboticPet temp = new RoboticPet(" ", " ", 1);
             temp.SpecifyPet();
             AddRoboPet(temp);
+            Console.WriteLine();
         }
         public void AddRoboPet(RoboticPet aPet)
         {
@@ -118,6 +119,7 @@ namespace VirtualPetsAmok
         }
         public void DisplayAllPetsZ()
         {//just a quick test
+            Console.WriteLine("\t\t\t===== Shelter =====\n");
             Console.WriteLine("\n\t   Species        Name           Age   Type");
             //Console.WriteLine("\n\tOrganic Pets");
             for (int i = 0; i < OrgPets.Count; i++)
@@ -125,6 +127,8 @@ namespace VirtualPetsAmok
                 int d = i + 1;
                 //Console.WriteLine("        " + d + ". " + OrgPets[i].GetPetInfoFormatted());
                 Console.WriteLine("\t" + d + ". " + OrgPets[i].GetPetInfoFormatted()+"Organic");
+                //OrgPets[i].DisplayPetStats();
+                //Console.WriteLine(" ");
             }
             //Console.WriteLine("\n\tRobotic Pets");
             for (int p = 0; p < RoboPets.Count; p++)
@@ -134,6 +138,17 @@ namespace VirtualPetsAmok
 
                 //Console.WriteLine("        " + x + ". " + RoboPets[p].GetPetInfo());
                 Console.WriteLine("\t" + x + ". " + RoboPets[p].GetPetInfoFormatted() + "Robotic");
+            }
+        }
+        public void TimePasses()
+        {
+            foreach (OrganicPet xxx in OrgPets)
+            {
+                xxx.TimeIncrement();
+            }
+            foreach (RoboticPet yyy in RoboPets)
+            {
+                yyy.TimeIncrement();
             }
         }
     }

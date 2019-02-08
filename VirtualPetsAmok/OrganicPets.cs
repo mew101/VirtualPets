@@ -46,6 +46,16 @@ namespace VirtualPetsAmok
             PrintStatusBar(Energy, 2);
             Console.WriteLine("\n");
         }
+        public void DisplayPetStats()
+        {
+            Console.Write("\tFullness:  ");
+            PrintStatusBar(Fullness, 2);
+            Console.Write("\tHappiness: ");
+            PrintStatusBar(Happiness, 2);
+            Console.Write("\tEnergy:    ");
+            PrintStatusBar(Energy, 2);
+            //Console.WriteLine("\n");
+        }
         public bool DisplayInteractionMenu()
         {
 
@@ -57,7 +67,7 @@ namespace VirtualPetsAmok
             Console.WriteLine("\tF - Feed ");
             Console.WriteLine("\tP - Play");
             Console.WriteLine("\tN - Nap");
-            Console.WriteLine("\tE - Go Back to Main Menu");
+            Console.WriteLine("\tE - Go Back to Shelter");
             Console.Write("\n\tEntry.........: ");
             string entry = Console.ReadLine();
 

@@ -50,6 +50,7 @@ namespace VirtualPetsAmok
                     int petChoice = 0;
                     do
                     {
+
                         allPets.DisplayAllPetsZ();
                         Console.Write("\n\tChoose a pet: ");
 
@@ -72,6 +73,7 @@ namespace VirtualPetsAmok
                             {
                                 allPets.DisplayShelterPetInfo(petChoice);
                                 continueInteracting = allPets.DisplayShelterPetInteractions(petChoice);
+                                allPets.TimePasses();
                             } while (continueInteracting);
                         }
                         else

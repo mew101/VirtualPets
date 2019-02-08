@@ -175,6 +175,7 @@ namespace VirtualPetsAmok
                 Console.Write("\b");// Add 1 extra backspace in case number is 2 digits
 
             Console.Write("\b" + howMuch + "\n");
+
             Console.ResetColor();
         }
        

@@ -61,7 +61,7 @@ namespace VirtualPetsAmok
             Console.WriteLine("\tP - Play");
             Console.WriteLine("\tC - Charge ");
             Console.WriteLine("\tL - Lubricate");
-            Console.WriteLine("\tE - Go Back to Main Menu");
+            Console.WriteLine("\tE - Go Back to Shelter");
             Console.Write("\n\tEntry.........: ");
             string entry = Console.ReadLine();
 
