@@ -10,9 +10,7 @@ namespace VirtualPetsAmok
 
         public RoboticPet(string s, string n, int a) : base(s, n, a)
         {
-            //Species = s;
-            //Name = n;
-            //Age = a;
+           
             Energy = 5;  //battery level
             Lubricity = 5;
             
@@ -57,18 +55,14 @@ namespace VirtualPetsAmok
         
         public void DisplayPetStats()
         {
-            //Console.Write("\tFullness:  ");
             int x = Console.CursorLeft;
             int y = Console.CursorTop;
             PrintStatusBar(Lubricity, 2);
-            //Console.Write("\tHappiness: ");
 
             Console.SetCursorPosition(x + 30, y);
             PrintStatusBar(Happiness, 2);
-            //Console.Write("\tEnergy:    ");
             Console.SetCursorPosition(x + 60, y);
             PrintStatusBar(Energy, 2);
-            //Console.WriteLine("\n");
         }
 
         public bool DisplayInteractionMenu()
@@ -114,18 +108,8 @@ namespace VirtualPetsAmok
             string a = Age.ToString().PadRight(6);
             return (s + n + a);
         }
-        /*public override bool IsAlive()//All need to be above 0
-        {
-            if (Happiness > 0 && Energy > 0 && Lubricity > 0)
-            {
-                return (true); //alive
-            }
-            else
-            {
-                return (false); //dead
-            }
-        }*/
-        public override bool IsAlive()//One attribute need to be above 0
+      
+        public override bool IsAlive()
         {
             if (Happiness > 0 || Energy > 0 || Lubricity > 0)
             {

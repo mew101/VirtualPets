@@ -145,50 +145,35 @@ namespace VirtualPetsAmok
             }
         }
         public void DisplayAllPetsZ()
-        {//just a quick test
+        {
             Console.WriteLine("\t\t\t===== Shelter =====\n");
             Console.WriteLine("\n\t   Species        Name           Age   Type");
-            //Console.WriteLine("\n\tOrganic Pets");
             for (int i = 0; i < OrgPets.Count; i++)
             {
                 int d = i + 1;
-                //Console.WriteLine("        " + d + ". " + OrgPets[i].GetPetInfoFormatted());
                 Console.WriteLine("\t" + d + ". " + OrgPets[i].GetPetInfoFormatted()+"Organic");
-                //OrgPets[i].DisplayPetStats();
-                //Console.WriteLine(" ");
             }
-            //Console.WriteLine("\n\tRobotic Pets");
             for (int p = 0; p < RoboPets.Count; p++)
             {
                 //change to method 
                 int x = (OrgPets.Count) + p + 1;
 
-                //Console.WriteLine("        " + x + ". " + RoboPets[p].GetPetInfo());
                 Console.WriteLine("\t" + x + ". " + RoboPets[p].GetPetInfoFormatted() + "Robotic");
             }
         }
         public void DisplayAllPetsZZ()
-        {//just a quick test
+        {
             Console.WriteLine("\t\t\t===== Shelter =====\n");
             Console.WriteLine("\n\t   Species        Name           Age   Type      \n");
-            //Console.WriteLine("\n\tOrganic Pets");
             for (int i = 0; i < OrgPets.Count; i++)
             {
                 int d = i + 1;
-                //Console.WriteLine("        " + d + ". " + OrgPets[i].GetPetInfoFormatted());
                 Console.Write("\t" + d + ". " + OrgPets[i].GetPetInfoFormatted() + "Organic   ");
                 OrgPets[i].DisplayPetStats();
-                //Console.Write("\n");
-                //OrgPets[i].DisplayPetStats();
-                //Console.WriteLine(" ");
             }
-            //Console.WriteLine("\n\tRobotic Pets");
             for (int p = 0; p < RoboPets.Count; p++)
             {
-                //change to method 
                 int x = (OrgPets.Count) + p + 1;
-
-                //Console.WriteLine("        " + x + ". " + RoboPets[p].GetPetInfo());
                 Console.Write("\t" + x + ". " + RoboPets[p].GetPetInfoFormatted() + "Robotic   ");
                 RoboPets[p].DisplayPetStats();
             }
@@ -206,22 +191,6 @@ namespace VirtualPetsAmok
         }
         public void CheckForDeath()
         {
-            /*foreach (OrganicPet xxx in OrgPets)
-            {
-                if (!(xxx.IsAlive()))
-                {
-                    xxx.PetDies();
-                    RemoveOrgPet(xxx);
-                }
-            }
-            foreach (RoboticPet yyy in RoboPets)
-            {
-                if (!(yyy.IsAlive()))
-                {
-                    yyy.PetDies();
-                    RemoveRoboPet(yyy);
-                }
-            }*/
             int[] removals = new int[20];
             int howMany = 0;
             for (int i = 0; i < OrgPets.Count; i++)

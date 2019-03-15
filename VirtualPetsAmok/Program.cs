@@ -9,23 +9,15 @@ namespace VirtualPetsAmok
             Console.SetWindowSize(130, 40);
             Console.BackgroundColor = ConsoleColor.DarkBlue; //Change Console background color 
 
-            //VirtualPet[] pet1 = new VirtualPet[2];
             Shelter allPets = new Shelter();
 
-            //OrganicPet pet1 = new OrganicPet("Kitty", "Rob", 4);    //This may need to be removed
             bool gameContinues = true;
-            //bool petExists = false;//probably remove
 
             OrganicPet.Kitty(10,100); //Kitty(tabs, milliseconds);
             Console.WriteLine("Welcome to the Pet Shelter!");
 
-            Console.BackgroundColor = ConsoleColor.Black; //Change console background color back to black
-            /*
-            Shelter xxx = new Shelter();
-            Console.Clear();
-            xxx.DisplayAllPets();
-            Console.ReadLine();
-            */
+            Console.BackgroundColor = ConsoleColor.Black; 
+          
 
             do
             {
@@ -37,7 +29,6 @@ namespace VirtualPetsAmok
                     "\tI - View Instructions    \n" +
                     "\tE - Exit                 \n\n");
 
-                //string userInput = Console.ReadLine().ToLower();
                 string userInput = Console.ReadLine();
                 if ((userInput.Length > 1) || !(char.IsLetter(userInput[0])))   
                 {
@@ -55,7 +46,7 @@ namespace VirtualPetsAmok
                     //Environment.Exit(0);
                     gameContinues = false;
                 }
-                else if (userInput.Equals("p"))//Display Shelter
+                else if (userInput.Equals("p"))
                 {
                     if (allPets.HowManyPetsInShelter() > 0)
                     {
@@ -68,12 +59,10 @@ namespace VirtualPetsAmok
                             allPets.DisplayAllPetsZZ();
                             Console.Write("\n\tChoose a pet (0 to Go Back): ");
 
-                            //petChoice = Convert.ToInt32(Console.ReadLine());
                             string petChoiceString = Console.ReadLine();
                             if (char.IsNumber(petChoiceString[0]) && petChoiceString.Length == 1)
                             {
                                 petChoice = Convert.ToInt32(petChoiceString);
-                                //Console.WriteLine("petChoice: " + petChoice);
                             }
                             else
                             {
@@ -86,7 +75,6 @@ namespace VirtualPetsAmok
 
                                 do
                                 {
-
                                     Console.Clear();
                                     allPets.DisplayShelterPetInfo(petChoice);
                                     continueInteracting = allPets.DisplayShelterPetInteractions(petChoice);
@@ -100,11 +88,9 @@ namespace VirtualPetsAmok
                             }
                             else
                             {
-                                //invalid choice
                                 Console.WriteLine("Please choose a valid pet");
                             }
                         } while (petChoice != 0);
-                        //Console.ReadLine()
                     }
                     else
                     {
@@ -130,7 +116,6 @@ namespace VirtualPetsAmok
                         if (char.IsNumber(petChoiceString[0]) && petChoiceString.Length == 1)
                         {
                             petType = Convert.ToInt32(petChoiceString);
-                            //Console.WriteLine("petChoice: " + petChoice);
                         }
                         else
                         {
@@ -172,12 +157,10 @@ namespace VirtualPetsAmok
                             Console.WriteLine("Which Pet found a Permanent Home?");
                             Console.Write("\n\tChoose a pet: ");
 
-                            //petChoice = Convert.ToInt32(Console.ReadLine());
                             string petChoiceString = Console.ReadLine();
                             if (char.IsNumber(petChoiceString[0]) && petChoiceString.Length == 1)
                             {
                                 petChoice = Convert.ToInt32(petChoiceString);
-                                //Console.WriteLine("petChoice: " + petChoice);
                             }
                             else
                             {
@@ -193,11 +176,9 @@ namespace VirtualPetsAmok
                             }
                             else
                             {
-                                //invalid choice
                                 Console.WriteLine("Please choose a valid pet");
                             }
                         } while (petChoice != 0 && !petWasRemoved);
-                        //Console.ReadLine()
                     }
                     else
                     {
@@ -220,7 +201,6 @@ namespace VirtualPetsAmok
             
             
         }
-        //public static bool isDigit(string temp)
         static void displayInstructions()
         {
             Console.WriteLine("\tWELCOME TO THE PET SHELTER!\n\n" +
